@@ -1,0 +1,63 @@
+/* ===== NATAL — «Edição de Natal» do VanBerto's =====
+   Carrega depois de dia-crianca.css e só muda cores/enfeites (vermelho, verde e dourado). */
+
+/* Neve e luzinhas: por cima de tudo mas sem apanhar cliques. */
+#natalSnow { position: fixed; inset: 0; width: 100vw; height: 100dvh; pointer-events: none; z-index: 2001; }
+#natalLights {
+  position: fixed; top: 0; left: 0; right: 0; height: 16px; display: flex; justify-content: space-around;
+  pointer-events: none; z-index: 2002; padding-top: 3px; box-sizing: border-box;
+}
+#natalLights::before { content: ""; position: absolute; left: 0; right: 0; top: 2px; height: 2px; background: rgba(20,60,30,0.85); }
+#natalLights i {
+  position: relative; display: block; width: 7px; height: 10px; margin-top: 2px; border-radius: 50% 50% 55% 55%;
+  background: var(--c); box-shadow: 0 0 6px 1px var(--c); animation: natalTwinkle 1.6s ease-in-out infinite;
+}
+@keyframes natalTwinkle { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { #natalLights i { animation: none; } }
+@media print { #natalSnow, #natalLights { display: none !important; } }
+
+/* Cartões: aro vermelho + dourado, cantos com 🎄 e 🎁, título com contorno vermelho. */
+.card {
+  box-shadow:
+    0 0 0 3px #c62828,
+    0 0 0 5px #ffd700,
+    8px 8px 0 #0a0520,
+    0 0 50px rgba(198,40,40,0.28),
+    inset 0 1px 0 rgba(255,200,100,0.12);
+}
+.card::before { content: '🎄'; }
+.card::after  { content: '🎁'; }
+.card h1 {
+  border-bottom-color: #2e9b4a;
+  -webkit-text-stroke-color: #a5121b;
+  text-shadow: 0 2px 0 #6d0a10, 0 5px 10px rgba(0,0,0,0.45);
+}
+.btn.primary { background: linear-gradient(180deg, #e8453c 0%, #b3212b 100%); }
+
+/* Fita «Edição de Natal» no menu principal */
+.natal-ribbon {
+  display: block; width: fit-content; margin: -2px auto 8px; padding: 3px 16px; border-radius: 999px;
+  font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; letter-spacing: 0.04em; color: #fff;
+  background: linear-gradient(90deg, #c62828, #e53935 45%, #2e7d32);
+  border: 2px solid #ffd700; box-shadow: 0 2px 0 rgba(0,0,0,0.35);
+}
+@media (max-height: 520px) { .natal-ribbon { margin-bottom: 4px; padding: 1px 12px; font-size: 11px; } }
+.natal-cert { margin: 2px 0 0; font-weight: 800; color: #c62828; }
+
+/* Botões grandes (que o jogo normal pinta de laranja com !important) → vermelho de Natal */
+.menu-tile.primary {
+  background: linear-gradient(180deg, #ea4a40 0%, #a81d27 100%) !important;
+  box-shadow: 4px 4px 0 #0a0520, 0 0 18px rgba(232,69,60,0.4) !important;
+}
+.win-card .btn.primary { background: linear-gradient(180deg, #ea4a40, #b3212b) !important; }
+
+@media (max-width: 480px) {
+  .natal-ribbon { margin: -4px auto 6px; padding: 1px 12px; font-size: 11.5px; }
+}
+@media (max-width: 480px) {
+  /* a linha Som / Neve / Botões / Ecrã todo continua numa só linha, mesmo com o 4.º botão */
+  #btnMute, #btnNeve, #btnTouchToggleStart, #btnFullscreen { font-size: 10.5px !important; padding: 6px 3px !important; }
+  #btnMute, #btnNeve, #btnTouchToggleStart, #btnFullscreen { margin: 0 !important; }
+  #btnMute:not(.menu-tile) { box-shadow: 3px 3px 0 #0a0520; }
+}
+@media (max-width: 480px) { .row:has(#btnNeve) { gap: 4px; flex-wrap: nowrap; } }
