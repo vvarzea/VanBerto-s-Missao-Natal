@@ -8,6 +8,8 @@
 > - Guizos nos itens, «Jingle Bells» no fim de cada nível e «We Wish You a Merry Christmas» no final do jogo.
 > - «🎄 Dica de Natal» no fim de cada um dos 20 cartões «Sabias que…?» (`data-quiz.js`, lista `NATAL_TIPS`) e 10 curiosidades
 >   novas sobre burlas de Natal nas salas secretas (`fact:` em `data-levels.js`).
+> - Ícones da aplicação (instalar no ecrã, separador do navegador) com gorro de Pai Natal.
+> - Textos festivos: chegada a cada mundo, falas de entrada dos 4 bosses, «Boas Festas» no ecrã de vitória e no certificado.
 > - O progresso e a cache offline têm nomes próprios (`vanbertos_ciberseguranca_natal_save_v1`, `natal-vanbertos-…`),
 >   por isso nunca se misturam com os do jogo normal.
 
@@ -124,7 +126,7 @@ e abrir <http://localhost:8000>.
 ## Versões e cache
 
 Todos os ficheiros carregados pelo `index.html` e todos os `import` internos levam **a mesma**
-string `?v=…` (atualmente `20261012natal2`). Tem de ser sempre igual em todo o lado: o mesmo módulo
+string `?v=…` (atualmente `20261012natal3`). Tem de ser sempre igual em todo o lado: o mesmo módulo
 importado com strings diferentes é carregado duas vezes, como duas instâncias separadas, e os
 browsers que já têm o jogo podem ficar com uma mistura de ficheiros velhos e novos.
 

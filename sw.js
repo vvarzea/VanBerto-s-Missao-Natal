@@ -4,7 +4,7 @@
 //    jogados têm fundo; os outros mostram o céu desenhado (o jogo já lida com isso em applyBackground).
 //  • Cada versão tem a sua própria cache, por isso nunca se misturam ficheiros de versões diferentes.
 // VERSION é carimbada pelo _dev/release.py e tem de ser igual à string ?v= do index.html (o check.mjs verifica).
-const VERSION = "20261012natal2";
+const VERSION = "20261012natal3";
 const CACHE = "natal-vanbertos-" + VERSION;   // NATAL: prefixo próprio, para não apagar/misturar com a cache do jogo normal
 
 // Ficheiros do núcleo. Os .js e .css pedem-se com ?v=VERSION, como no index.html e nos imports.

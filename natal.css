@@ -72,3 +72,7 @@
     8px 8px 0 rgba(0,0,0,0.4),
     0 0 80px rgba(255,215,0,0.3) !important;
 }
+
+/* Mensagens de Boas Festas no ecrã de vitória e no certificado */
+.win-natal { margin: 2px 0 6px; font-weight: 800; font-size: 14px; color: #ffd700; text-shadow: 0 1px 0 #7d0d16; text-align: center; }
+.natal-cert-msg { margin-top: 8px; font-weight: 800; font-style: italic; color: #ff8a80; }
