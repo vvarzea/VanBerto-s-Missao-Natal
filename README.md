@@ -1,11 +1,15 @@
 # VanBerto's — Missão Cibersegurança · Edição de Natal
 
-> **Edição de Natal:** os mesmos 20 níveis, quizzes e bosses do jogo normal, com visual natalício — gorro de Pai Natal no
-> VanBerto's e nos vilões, neve nas plataformas e nos canos, fundos com tom de inverno (gravado nas próprias imagens, sem custo no jogo), neve a cair e luzinhas
-> (`natal.js` / `natal.css`; botão «❄️ Neve» no menu), guizos nos itens e «Jingle Bells» / «We Wish You a Merry Christmas»
-> no fim dos níveis / do jogo. O progresso e a cache offline têm nomes próprios (`vanbertos_ciberseguranca_natal_save_v1`,
-> `natal-vanbertos-…`), por isso nunca se misturam com os do jogo normal.
-> Para um inverno «a sério», basta trocar os `.webp` dos fundos e dos mapas (mesmos nomes) por versões com neve gerada.
+> **Edição de Natal** (jogo à parte, não é um modo do jogo normal): os mesmos 20 níveis, quizzes e bosses, com visual natalício.
+> - Gorro de Pai Natal no VanBerto's, nos vilões e nos 4 bosses; grinalda no portal; neve nas plataformas e nos canos.
+> - Fundos, mapas e sala secreta com neve (as zonas verdes das ilustrações foram «nevadas» — ver os `.webp`).
+> - Neve a cair e luzinhas (`natal.js` / `natal.css`; botão «❄️ Neve» no menu). Se o computador estiver lento, a neve
+>   aligeira-se sozinha (menos flocos, luzes paradas) e, em último caso, desliga-se nessa sessão.
+> - Guizos nos itens, «Jingle Bells» no fim de cada nível e «We Wish You a Merry Christmas» no final do jogo.
+> - «🎄 Dica de Natal» no fim de cada um dos 20 cartões «Sabias que…?» (`data-quiz.js`, lista `NATAL_TIPS`) e 10 curiosidades
+>   novas sobre burlas de Natal nas salas secretas (`fact:` em `data-levels.js`).
+> - O progresso e a cache offline têm nomes próprios (`vanbertos_ciberseguranca_natal_save_v1`, `natal-vanbertos-…`),
+>   por isso nunca se misturam com os do jogo normal.
 
 
 Jogo de plataformas educativo sobre cibersegurança, feito com Phaser 3 e módulos ES nativos.
@@ -120,7 +124,7 @@ e abrir <http://localhost:8000>.
 ## Versões e cache
 
 Todos os ficheiros carregados pelo `index.html` e todos os `import` internos levam **a mesma**
-string `?v=…` (atualmente `20261011natal1`). Tem de ser sempre igual em todo o lado: o mesmo módulo
+string `?v=…` (atualmente `20261012natal2`). Tem de ser sempre igual em todo o lado: o mesmo módulo
 importado com strings diferentes é carregado duas vezes, como duas instâncias separadas, e os
 browsers que já têm o jogo podem ficar com uma mistura de ficheiros velhos e novos.
 

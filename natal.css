@@ -61,3 +61,14 @@
   #btnMute:not(.menu-tile) { box-shadow: 3px 3px 0 #0a0520; }
 }
 @media (max-width: 480px) { .row:has(#btnNeve) { gap: 4px; flex-wrap: nowrap; } }
+#natalLights.lite i { animation: none; box-shadow: none; }   /* modo económico automático */
+
+/* Certificado: moldura dourada + vermelho + verde de Natal */
+.certificate-card {
+  box-shadow:
+    0 0 0 3px #ffd700,
+    0 0 0 6px #c62828,
+    0 0 0 8px #2e9b4a,
+    8px 8px 0 rgba(0,0,0,0.4),
+    0 0 80px rgba(255,215,0,0.3) !important;
+}

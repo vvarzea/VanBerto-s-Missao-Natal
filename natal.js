@@ -20,9 +20,13 @@ canvas.id = "natalSnow";
 canvas.setAttribute("aria-hidden", "true");
 const ctx = canvas.getContext("2d");
 let W = 0, H = 0, flakes = [], raf = 0, last = 0;
+// Modo económico automático: se o computador estiver lento, a neve fica mais leve e, em último caso, desliga-se
+// (só nesta sessão — a escolha guardada no botão «Neve» não é alterada).
+let lite = 0;                                  // 0 = normal, 1 = menos flocos e sem animação nas luzes, 2 = neve desligada
+let prevRaw = 0, sumRaw = 0, nRaw = 0, startedAt = performance.now(), flakeScale = 1;
 
 function makeFlakes() {
-  const n = Math.max(35, Math.min(110, Math.round((W * H) / 9500)));
+  const n = Math.max(25, Math.round(Math.max(35, Math.min(110, Math.round((W * H) / 9500))) * flakeScale));
   flakes = Array.from({ length: n }, () => ({
     x: Math.random() * W, y: Math.random() * H,
     r: 1 + Math.random() * 2.4,                // raio
@@ -36,11 +40,23 @@ function resize() {
   W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight;
   makeFlakes();
 }
+function degrade() {
+  lite++;
+  if (lite === 1) { flakeScale = 0.5; makeFlakes(); lights.classList.add("lite"); }
+  else if (lite >= 2) { snowAuto = false; applySnow(); }
+}
+let snowAuto = true;
 function frame(t) {
   raf = 0;
-  if (!snowOn) { ctx.clearRect(0, 0, W, H); return; }
+  if (!snowOn || !snowAuto) { ctx.clearRect(0, 0, W, H); return; }
   raf = requestAnimationFrame(frame);
-  if (document.hidden) { last = t; return; }
+  if (document.hidden) { last = t; prevRaw = 0; return; }
+  // mede o ritmo real do navegador (ignora os primeiros 4 s, em que o jogo ainda está a carregar)
+  if (prevRaw && t - prevRaw < 500 && performance.now() - startedAt > 4000) {
+    sumRaw += t - prevRaw; nRaw++;
+    if (nRaw >= 90) { const mean = sumRaw / nRaw; sumRaw = 0; nRaw = 0; if (mean > 55 && lite < 2) degrade(); }
+  }
+  prevRaw = t;
   if (t - last < 33) return;                   // ~30 imagens/s chegam (poupa o computador)
   const dt = Math.min(0.1, (t - last) / 1000 || 0.033); last = t;
   ctx.clearRect(0, 0, W, H);
@@ -56,15 +72,16 @@ function frame(t) {
   ctx.globalAlpha = 1;
 }
 function applySnow() {
-  canvas.style.display = snowOn ? "block" : "none";
-  if (snowOn && !raf) raf = requestAnimationFrame(frame);
-  if (!snowOn) { cancelAnimationFrame(raf); raf = 0; ctx.clearRect(0, 0, W, H); }
+  const show = snowOn && snowAuto;
+  canvas.style.display = show ? "block" : "none";
+  if (show && !raf) raf = requestAnimationFrame(frame);
+  if (!show) { cancelAnimationFrame(raf); raf = 0; ctx.clearRect(0, 0, W, H); }
   const btn = document.getElementById("btnNeve");
   if (btn) {
     // em ecrãs estreitos o texto encurta-se, para a linha de botões do menu continuar numa só linha
     const narrow = window.matchMedia && window.matchMedia("(max-width: 480px)").matches;
-    btn.textContent = (narrow ? "❄️ " : "❄️ Neve: ") + (snowOn ? "ON" : "OFF");
-    btn.setAttribute("aria-label", "Neve: " + (snowOn ? "ligada" : "desligada"));
+    btn.textContent = (narrow ? "❄️ " : "❄️ Neve: ") + (snowOn && snowAuto ? "ON" : "OFF");
+    btn.setAttribute("aria-label", "Neve: " + (snowOn && snowAuto ? "ligada" : "desligada"));
     btn.setAttribute("aria-pressed", String(snowOn));
   }
 }
@@ -92,7 +109,11 @@ function init() {
   let rt = 0;
   window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { resize(); buildLights(); applySnow(); }, 150); });
   const btn = document.getElementById("btnNeve");
-  if (btn) btn.addEventListener("click", () => { snowOn = !snowOn; saveSnowPref(snowOn); applySnow(); });
-  window.__natal = { isSnowOn: () => snowOn, setSnow: (v) => { snowOn = !!v; saveSnowPref(snowOn); applySnow(); } };
+  if (btn) btn.addEventListener("click", () => {
+    if (snowOn && !snowAuto) { snowAuto = true; lite = 0; flakeScale = 1; lights.classList.remove("lite"); makeFlakes(); sumRaw = nRaw = 0; startedAt = performance.now(); } // tenta outra vez
+    else { snowOn = !snowOn; saveSnowPref(snowOn); }
+    applySnow();
+  });
+  window.__natal = { isSnowOn: () => snowOn && snowAuto, liteLevel: () => lite, setSnow: (v) => { snowOn = !!v; saveSnowPref(snowOn); applySnow(); } };
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

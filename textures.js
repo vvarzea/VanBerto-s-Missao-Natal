@@ -42,11 +42,53 @@ function santaHat(ctx,x,y,w,flip){
   ctx.fillStyle="rgba(150,170,200,0.35)"; ctx.fillRect(-16,2.4,32,1.6);
   ctx.restore();
 }
+// ===== NATAL — gorros nos bosses e grinalda no portal =====
+// Os bosses ocupam quase toda a textura (116x116), por isso o gorro é pequeno e assenta por cima do topo da cabeça.
+// A posição calcula-se a partir da própria imagem (o 1.º pixel opaco na zona central), igual em todas as expressões.
+function natalBossHats(scene){
+  const NAMES=["virus_gigante","monstro_phishing","robo_spam","espiao_sombras"];
+  const SUF=["","_armsdown","_blink","_ouch","_laugh","_angry","_sad"];
+  for(const n of NAMES) for(const sf of SUF){
+    const key="boss_"+n+sf;
+    if(!scene.textures.exists(key)) continue;
+    const tex=scene.textures.get(key), ctx=tex.getContext && tex.getContext(); if(!ctx) continue;
+    const S=tex.getSourceImage().width, data=ctx.getImageData(0,0,S,S).data;
+    let top=-1;
+    for(let y=0;y<S&&top<0;y++){ let c=0; for(let x=44;x<73;x++) if(data[(y*S+x)*4+3]>60) c++; if(c>=8) top=y; }
+    if(top<0) continue;
+    let sx=0,cn=0; for(let y=top;y<top+8;y++) for(let x=0;x<S;x++) if(data[(y*S+x)*4+3]>60){ sx+=x; cn++; }
+    const cx=Math.max(40,Math.min(76,cn?sx/cn:58)), w=30, hatH=0.55*w;
+    santaHat(ctx,cx-2,Math.max(top+13,hatH+2),w,false);
+    tex.refresh();
+  }
+}
+// Grinalda de azevinho à volta do anel do portal, com laço vermelho no topo.
+function natalWreath(ctx,cx,cy,r){
+  ctx.save(); ctx.lineJoin="round";
+  for(let i=0;i<22;i++){ // folhas
+    const a=i/22*Math.PI*2, x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r;
+    ctx.save(); ctx.translate(x,y); ctx.rotate(a+Math.PI/2+(i%2?0.5:-0.5));
+    ctx.fillStyle=i%2?"#1f8a3b":"#2fae52"; ctx.strokeStyle="#0f5a25"; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.ellipse(0,0,3,7,0,0,Math.PI*2); ctx.fill(); ctx.stroke(); ctx.restore();
+  }
+  [0.4,1.3,2.2,3.1,4.0,4.9,5.8].forEach(a=>{ // bagas vermelhas
+    ctx.fillStyle="#e53935"; ctx.strokeStyle="#7d0d16"; ctx.lineWidth=1;
+    ctx.beginPath(); ctx.arc(cx+Math.cos(a)*r,cy+Math.sin(a)*r,2.4,0,Math.PI*2); ctx.fill(); ctx.stroke();
+  });
+  // laço no topo
+  const bx=cx, by=cy-r;
+  ctx.fillStyle="#e53935"; ctx.strokeStyle="#7d0d16"; ctx.lineWidth=1.3;
+  ctx.beginPath(); ctx.moveTo(bx,by); ctx.lineTo(bx-9,by-6); ctx.lineTo(bx-9,by+5); ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(bx,by); ctx.lineTo(bx+9,by-6); ctx.lineTo(bx+9,by+5); ctx.closePath(); ctx.fill(); ctx.stroke();
+  ctx.fillStyle="#ffd54a"; ctx.beginPath(); ctx.arc(bx,by,2.6,0,Math.PI*2); ctx.fill(); ctx.stroke();
+  ctx.restore();
+}
 export function makeTextures(scene){
   makePlatformTexture(scene);
   makeDoorTexture(scene);
   makeVilaosTextures(scene);
   makeBossTextures(scene);
+  natalBossHats(scene); // NATAL
   makeSparkTexture(scene);
   makeItemTextures(scene);
   makeVanBertoTexture(scene,"vanberto_open",false,-1);
@@ -245,6 +287,7 @@ function makeDoorTexture(scene){
   ctx.fillText("PORTAL!", cx, h-10);
   ctx.shadowBlur=0;
 
+  natalWreath(ctx,cx,cy,29); // NATAL: grinalda de azevinho à volta do portal
   tex.refresh();
 }
 
