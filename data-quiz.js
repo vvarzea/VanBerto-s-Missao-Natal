@@ -90,6 +90,31 @@ export const HISTORY = [
     text: "Desde 2021 que a ONU reconhece que todos os direitos das crianças se aplicam também ao mundo digital — incluindo privacidade e proteção. Mas com direitos vêm deveres: usar a internet com responsabilidade e respeito por todos."
   }
 ];
+// ===== NATAL — «Dica de Natal» no fim de cada um dos 20 cartões «Sabias que…?» (mesma ordem dos níveis) =====
+const NATAL_TIPS = [
+  "no Natal a internet enche-se de ofertas, e nem todas são de confiança.",
+  "se receberes uma consola ou um telemóvel novo, cria logo uma palavra-passe forte e só tua.",
+  "nunca dês a morada ou os dados do cartão para «receber uma prenda» ou um prémio.",
+  "se caíres numa burla de compras online, conta a um adulto e pede ajuda à Linha Internet Segura.",
+  "cartões de Natal e ficheiros «grátis» que chegam por mensagem podem esconder vírus. Não os abras!",
+  "compra jogos e prendas digitais só nas lojas oficiais e nunca partilhes a tua conta com desconhecidos.",
+  "fotos das prendas e da casa ficam online durante muito tempo. Pensa antes de publicar.",
+  "promoções e «prémios» que se espalham em cadeia de mensagens costumam ser falsos. Confirma antes de partilhar.",
+  "mensagens de «encomenda retida» que pedem pagamento ou dados são uma burla muito comum nesta época.",
+  "prendas ligadas à internet (brinquedos, câmaras) devem ter uma palavra-passe nova e o software atualizado.",
+  "no dia de Natal, façam uma pausa dos ecrãs e combinem em família quando usar as prendas novas.",
+  "nos centros comerciais, evita pagamentos e palavras-passe no Wi-Fi público; usa os dados móveis.",
+  "antes de ofereceres ou trocares um telemóvel ou um computador, guarda uma cópia das fotos e dos ficheiros.",
+  "ao escolher uma prenda tecnológica, pensa em quem a vai usar: deve ser fácil e acessível para todos.",
+  "compra em sites que conheces, desconfia de preços absurdos e não pagues com dados enviados por mensagem.",
+  "se alguém te pedir dinheiro ou códigos por mensagem, não respondas, guarda a prova e conta a um adulto.",
+  "não uses o teu nome verdadeiro nem a tua morada em perfis de jogos ou em sorteios de prendas.",
+  "não partilhes códigos de cartões ou de vales-presente em mensagens públicas.",
+  "um «Pai Natal secreto» online que te peça fotos ou dados é um desconhecido: não respondas e avisa um adulto.",
+  "online também há boa educação: deseja Boas Festas, partilha alegria e respeita os outros.",
+];
+HISTORY.forEach((h, i) => { if (NATAL_TIPS[i]) h.text += " 🎄 Dica de Natal: " + NATAL_TIPS[i]; });
+
 
 export const QUIZ_TIPS = {
   historia_internet:      "A Internet nasceu em 1969; a World Wide Web (as páginas com links) surgiu 20 anos depois, em 1989. A cibersegurança protege-te sempre que as usas.",
