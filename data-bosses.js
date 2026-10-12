@@ -127,7 +127,7 @@ export const BOSSES = [
     // arenas) e por isso têm o seu próprio signX explícito, cada um com o
     // centro da sua plataforma baixa esquerda.
     signX: 230,
-    intro: "Um clique... e caíste na minha rede!",
+    intro: "Um clique... e caíste na minha rede! Até no Natal há anzóis!",
     defeatLine: "Nãoo! Viste através do meu disfarce!",
     quizTheme: "phishing",
     hp: 3,
@@ -315,7 +315,7 @@ export const BOSSES = [
     // cálculo por omissão (playerStartX+80, que com o playerStartX agora em
     // 400 daria 480 e cairia no vão aberto entre as plataformas).
     signX: 200,
-    intro: "Vou infetar todos os teus ficheiros!",
+    intro: "Vou infetar todos os teus ficheiros, até os das prendas de Natal!",
     defeatLine: "Argh! O antivírus... venceu-me!",
     quizTheme: "virus_malware",
     hp: 3,                     // 4→3: agora são sempre 3 saltos na cabeça, como os outros bosses "stomp"
@@ -444,7 +444,7 @@ export const BOSSES = [
     // abaixo) — mesma lógica dos outros bosses (ver comentário no Monstro
     // da Ignorância).
     signX: 220,
-    intro: "Nas sombras, ninguém vê os teus dados a desaparecer!",
+    intro: "Nas sombras, ninguém vê os teus dados a desaparecer! Nem o Pai Natal!",
     defeatLine: "A tua privacidade... venceu-me!",
     quizTheme: "direitos_digitais", // CORRIGIDO: estava "contacto_desconhecidos" (tema do
                               // Nível 19), por isso a pergunta do boss não coincidia com a
@@ -591,7 +591,7 @@ export const BOSSES = [
     // abaixo) — mesma lógica dos outros bosses (ver comentário no Monstro
     // da Ignorância).
     signX: 200,
-    intro: "Vou encher a tua caixa de correio para sempre!",
+    intro: "Vou encher a tua caixa de correio para sempre! Até de cartões de Natal falsos!",
     defeatLine: "As minhas mensagens... foram todas bloqueadas!",
     quizTheme: "spam_compras",
     hp: 3,                     // 5→3: agora são sempre 3 saltos na cabeça

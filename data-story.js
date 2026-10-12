@@ -4,19 +4,19 @@
 export const REGION_INTRO = {
   origens: {
     vanberto: "Vamos aprender as bases da Cibersegurança... e proteger os nossos dispositivos de vírus!",
-    arrival: "Bem-vindo ao Reino dos Fundamentos — a internet, as palavras-passe e quem nos protege. 🌐"
+    arrival: "Bem-vindo ao Reino dos Fundamentos — a internet, as palavras-passe e quem nos protege. 🌐 Está tudo coberto de neve! ❄️"
   },
   desenvolvimento: {
     vanberto: "Sinto mensagens estranhas e links suspeitos por perto... vamos ter espírito crítico!",
-    arrival: "Bem-vindo ao Vale da Comunicação Segura — jogos, publicações e o perigo do phishing. 📡"
+    arrival: "Bem-vindo ao Vale da Comunicação Segura — jogos, publicações e o perigo do phishing. 📡 Até as nuvens têm luzinhas de Natal! 🎄"
   },
   protecao: {
     vanberto: "Esta fortaleza esconde spam e burlas... vamos proteger os nossos dados com cuidado!",
-    arrival: "A Fortaleza da Proteção Digital guarda os dispositivos, a família e as compras seguras. 🛡️"
+    arrival: "A Fortaleza da Proteção Digital guarda os dispositivos, a família e as compras seguras. 🛡️ No Natal, as compras online pedem ainda mais cuidado! 🎁"
   },
   participacao: {
     vanberto: "Estamos quase lá! Sinto que alguém anda a espiar nas sombras...",
-    arrival: "A Cidade da Identidade Digital guarda a tua privacidade e a tua identidade online. 🔒"
+    arrival: "A Cidade da Identidade Digital guarda a tua privacidade e a tua identidade online. 🔒 Até o Pai Natal tem de guardar bem a lista de prendas! 🎅"
   }
 };
 
