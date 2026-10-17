@@ -1,4 +1,4 @@
-# VanBerto's — Missão Cibersegurança · Edição de Natal
+# VanBerto's — Missão Natal
 
 > **Edição de Natal** (jogo à parte, não é um modo do jogo normal): os mesmos 20 níveis, quizzes e bosses, com visual natalício.
 > - Gorro de Pai Natal no VanBerto's, nos vilões e nos 4 bosses; grinalda no portal; neve nas plataformas e nos canos.
@@ -14,7 +14,7 @@
 >   por isso nunca se misturam com os do jogo normal.
 
 
-Jogo de plataformas educativo sobre cibersegurança, feito com Phaser 3 e módulos ES nativos.
+Jogo de plataformas educativo sobre o Natal (história, tradições, ciência e tecnologia), feito com Phaser 3 e módulos ES nativos.
 Sem *build step*: os ficheiros publicam-se tal como estão (GitHub Pages).
 
 ## O jogo
@@ -126,7 +126,7 @@ e abrir <http://localhost:8000>.
 ## Versões e cache
 
 Todos os ficheiros carregados pelo `index.html` e todos os `import` internos levam **a mesma**
-string `?v=…` (atualmente `20261017natal7`). Tem de ser sempre igual em todo o lado: o mesmo módulo
+string `?v=…` (atualmente `20261017natal8`). Tem de ser sempre igual em todo o lado: o mesmo módulo
 importado com strings diferentes é carregado duas vezes, como duas instâncias separadas, e os
 browsers que já têm o jogo podem ficar com uma mistura de ficheiros velhos e novos.
 
