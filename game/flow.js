@@ -7,24 +7,24 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { collectedArtefacts, showArtefactGallery } from "./artefacts.js?v=20261012natal3";
-import { startBossFight } from "./boss-core.js?v=20261012natal3";
-import { bonusStars, btnCloseQuiz, quizOverlay } from "./dom.js?v=20261012natal3";
-import { clearDoubleJump, clearPower, clearStarPower } from "./items.js?v=20261012natal3";
-import { loadLevel } from "./level.js?v=20261012natal3";
-import { celebrateWorldComplete, enterLevelWithStory, isLastLevelOfRegion, regionForLevel, renderMap, renderWorldMap } from "./map.js?v=20261012natal3";
-import { closeOverlay, openOverlay, saveGame } from "./overlays.js?v=20261012natal3";
-import { quizStats, showHistory, wireReviewButton } from "./quiz.js?v=20261012natal3";
-import { openAchievementsScreen } from "./screens.js?v=20261012natal3";
-import { _doorWatchdogTimer, _landingCheckTimer, _reviewReturnOverlay, currentLevel, door, livesLostThisLevel, pausedByTeacher, player, playerName, powerHaloGfx, sceneRef, score, scoreText, set__doorWatchdogTimer, set__hudDirty, set__landingCheckTimer, set__reviewReturnOverlay, set__winOverlaySubOpen, set_awaitingQuiz, set_awaitingStory, set_livesLostThisLevel, set_score, shadowGfx, touch } from "./state.js?v=20261012natal3";
-import { adventureScore, globalStats, medalTextWin, medalTier } from "./stats.js?v=20261012natal3";
-import { btnWinRestart } from "./ui.js?v=20261012natal3";
-import { starsForLevel, totalStarsEarned, levelStars } from "../stars.js?v=20261012natal3";
-import { LEVELS } from "../data-levels.js?v=20261012natal3";
-import { BOSS_BY_LEVEL } from "../data-bosses.js?v=20261012natal3";
-import { ensureAudio, SFX } from "../audio.js?v=20261012natal3";
-import { hideDoorGlow } from "../background.js?v=20261012natal3";
-import { ARTEFACTS } from "../data-progression.js?v=20261012natal3";
+import { collectedArtefacts, showArtefactGallery } from "./artefacts.js?v=20261017natal7";
+import { startBossFight } from "./boss-core.js?v=20261017natal7";
+import { bonusStars, btnCloseQuiz, quizOverlay } from "./dom.js?v=20261017natal7";
+import { clearDoubleJump, clearPower, clearStarPower } from "./items.js?v=20261017natal7";
+import { loadLevel } from "./level.js?v=20261017natal7";
+import { celebrateWorldComplete, enterLevelWithStory, isLastLevelOfRegion, regionForLevel, renderMap, renderWorldMap } from "./map.js?v=20261017natal7";
+import { closeOverlay, openOverlay, saveGame } from "./overlays.js?v=20261017natal7";
+import { quizStats, showHistory, wireReviewButton } from "./quiz.js?v=20261017natal7";
+import { openAchievementsScreen } from "./screens.js?v=20261017natal7";
+import { _doorWatchdogTimer, _landingCheckTimer, _reviewReturnOverlay, currentLevel, door, livesLostThisLevel, pausedByTeacher, player, playerName, powerHaloGfx, sceneRef, score, scoreText, set__doorWatchdogTimer, set__hudDirty, set__landingCheckTimer, set__reviewReturnOverlay, set__winOverlaySubOpen, set_awaitingQuiz, set_awaitingStory, set_livesLostThisLevel, set_score, shadowGfx, touch } from "./state.js?v=20261017natal7";
+import { adventureScore, globalStats, medalTextWin, medalTier } from "./stats.js?v=20261017natal7";
+import { btnWinRestart } from "./ui.js?v=20261017natal7";
+import { starsForLevel, totalStarsEarned, levelStars } from "../stars.js?v=20261017natal7";
+import { LEVELS } from "../data-levels.js?v=20261017natal7";
+import { BOSS_BY_LEVEL } from "../data-bosses.js?v=20261017natal7";
+import { ensureAudio, SFX } from "../audio.js?v=20261017natal7";
+import { hideDoorGlow } from "../background.js?v=20261017natal7";
+import { ARTEFACTS } from "../data-progression.js?v=20261017natal7";
 
 // BUG CORRIGIDO: nextLevel() não tinha nenhuma proteção contra ser chamada
 // duas vezes seguidas para a MESMA conclusão de nível (ex.: o botão
@@ -228,16 +228,26 @@ export function showVictoryScreen(scene){
 
     // ── Tabela de temas com erros — aparece logo se existirem ───────
     const THEME_LABELS={
-      historia_internet:"Nasce a Internet",palavras_passe:"Palavras-passe Fortes",
-      dados_pessoais:"Dados Pessoais",instituicoes_apoio:"Quem Nos Protege",
-      virus_malware:"Vírus e Malware",jogos_seguros:"Jogar em Segurança",
-      pegada_digital:"Pegada Digital",fake_news:"Fake News",
-      phishing:"Phishing",dispositivos:"Dispositivos Protegidos",
-      regras_familia:"Ecrã em Família",wifi_publico:"Wi-Fi Público",
-      copias_seguranca:"Cópias de Segurança",acessibilidade_digital:"Acessibilidade Digital",
-      spam_compras:"Spam e Compras",denuncia_conteudo:"Denunciar e Pedir Ajuda",
-      identidade_digital:"Identidade Digital",privacidade:"Privacidade",
-      contacto_desconhecidos:"Cuidado com Desconhecidos",direitos_digitais:"Direitos Digitais"
+      historia_internet:"A História do Natal",
+      palavras_passe:"Luzes de Natal",
+      dados_pessoais:"A Mesa de Natal em Portugal",
+      instituicoes_apoio:"O Natal pelo Mundo",
+      virus_malware:"A Ciência da Neve",
+      jogos_seguros:"Prendas Tecnológicas",
+      pegada_digital:"O Natal no Espaço",
+      fake_news:"Cartões e Correio de Natal",
+      phishing:"Músicas de Natal",
+      dispositivos:"A Matemática de Natal",
+      regras_familia:"Tradições em Família",
+      wifi_publico:"O Dia Mais Curto do Ano",
+      copias_seguranca:"Embrulhos e Reciclagem",
+      acessibilidade_digital:"Um Natal para Todos",
+      spam_compras:"Compras de Natal",
+      denuncia_conteudo:"O Pai Natal e a Lapónia",
+      identidade_digital:"Filmes e Histórias de Natal",
+      privacidade:"Enfeites de Natal",
+      contacto_desconhecidos:"O Natal Tecnológico",
+      direitos_digitais:"Passagem de Ano e Ano Novo"
     };
     const winThemeErrors=document.getElementById("winThemeErrors");
     const winThemeTable=document.getElementById("winThemeTable");
