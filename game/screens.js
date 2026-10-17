@@ -7,23 +7,23 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { renderAlbum, resetAllProgress } from "./artefacts.js?v=20261017natal7";
-import { btnMute, btnPause } from "./dom.js?v=20261017natal7";
-import { playLevelTransition } from "./door.js?v=20261017natal7";
-import { loadLevel, updateHearts } from "./level.js?v=20261017natal7";
-import { BG_FILES } from "./map.js?v=20261017natal7";
-import { closeOverlay, openOverlay, saveGame } from "./overlays.js?v=20261017natal7";
-import { showHistory } from "./quiz.js?v=20261017natal7";
-import { showPauseScreen } from "./scene.js?v=20261017natal7";
-import { _certificateOpenedFrom, difficulty, getStartLives, mapProgress, pausedByTeacher, playerName, powerHaloGfx, sceneRef, score, scoreText, setDifficulty, set__certificateOpenedFrom, set__overlayPaused, set_awaitingQuiz, set_currentLevel, set_lives, set_livesLostThisLevel, set_pausedByTeacher, set_score, shadowGfx } from "./state.js?v=20261017natal7";
-import { adventureScore, globalStats, medalTextCert, medalTier, updatePlayTime } from "./stats.js?v=20261017natal7";
-import { toggleFullscreen } from "./ui.js?v=20261017natal7";
-import { ensureAudio, SFX, isMuted, toggleMuted } from "../audio.js?v=20261017natal7";
-import { renderAchievements, unlockedAchievements } from "../achievements.js?v=20261017natal7";
-import { LEVELS } from "../data-levels.js?v=20261017natal7";
-import { totalStarsEarned, levelStars } from "../stars.js?v=20261017natal7";
-import { ACHIEVEMENTS_DEFS } from "../data-progression.js?v=20261017natal7";
-import { loadNamespace, saveNamespace } from "../storage.js?v=20261017natal7";
+import { renderAlbum, resetAllProgress } from "./artefacts.js?v=20261017natal8";
+import { btnMute, btnPause } from "./dom.js?v=20261017natal8";
+import { playLevelTransition } from "./door.js?v=20261017natal8";
+import { loadLevel, updateHearts } from "./level.js?v=20261017natal8";
+import { BG_FILES } from "./map.js?v=20261017natal8";
+import { closeOverlay, openOverlay, saveGame } from "./overlays.js?v=20261017natal8";
+import { showHistory } from "./quiz.js?v=20261017natal8";
+import { showPauseScreen } from "./scene.js?v=20261017natal8";
+import { _certificateOpenedFrom, difficulty, getStartLives, mapProgress, pausedByTeacher, playerName, powerHaloGfx, sceneRef, score, scoreText, setDifficulty, set__certificateOpenedFrom, set__overlayPaused, set_awaitingQuiz, set_currentLevel, set_lives, set_livesLostThisLevel, set_pausedByTeacher, set_score, shadowGfx } from "./state.js?v=20261017natal8";
+import { adventureScore, globalStats, medalTextCert, medalTier, updatePlayTime } from "./stats.js?v=20261017natal8";
+import { toggleFullscreen } from "./ui.js?v=20261017natal8";
+import { ensureAudio, SFX, isMuted, toggleMuted } from "../audio.js?v=20261017natal8";
+import { renderAchievements, unlockedAchievements } from "../achievements.js?v=20261017natal8";
+import { LEVELS } from "../data-levels.js?v=20261017natal8";
+import { totalStarsEarned, levelStars } from "../stars.js?v=20261017natal8";
+import { ACHIEVEMENTS_DEFS } from "../data-progression.js?v=20261017natal8";
+import { loadNamespace, saveNamespace } from "../storage.js?v=20261017natal8";
 
 // =====================================================
 // ===== CONQUISTAS =====
@@ -246,20 +246,20 @@ function showCertificate() {
   if (certTitle) certTitle.textContent = finished ? "Certificado Oficial" : "Certificado de Progresso";
   const certSubtitle = document.getElementById("certSubtitle");
   if (certSubtitle) certSubtitle.textContent = finished
-    ? "de Guardião da Cibersegurança"
-    : `em Cibersegurança — ${levelsCompletedSoFar} de ${LEVELS.length} níveis`;
+    ? "de Guardião do Natal"
+    : `em Natal — ${levelsCompletedSoFar} de ${LEVELS.length} níveis`;
   const certIntro2 = document.getElementById("certIntro2");
   if (certIntro2) certIntro2.textContent = finished
-    ? "que, com coragem, atenção e sabedoria, concluiu a missão das"
-    : "que, com coragem, atenção e sabedoria, está a completar a missão das";
+    ? "que, com coragem, atenção e sabedoria, concluiu a missão dos"
+    : "que, com coragem, atenção e sabedoria, está a completar a missão dos";
   const certHighlight = document.getElementById("certHighlight");
   if (certHighlight) certHighlight.textContent = finished
-    ? "20 Competências de Cibersegurança"
-    : `${levelsCompletedSoFar} de 20 Competências de Cibersegurança`;
+    ? "20 Tesouros de Natal"
+    : `${levelsCompletedSoFar} de 20 Tesouros de Natal`;
   const certOutro = document.getElementById("certOutro");
   if (certOutro) certOutro.textContent = finished
-    ? "tornando-se oficialmente Guardião da Cibersegurança."
-    : "e está a caminho de se tornar Guardião da Cibersegurança.";
+    ? "tornando-se oficialmente Guardião do Natal."
+    : "e está a caminho de se tornar Guardião do Natal.";
   // "Jogar de novo" apaga TODO o progresso (resetAllProgress, ver o próprio botão mais abaixo) —
   // faz sentido logo depois de terminar o jogo, mas seria perigoso deixá-lo à vista a meio da
   // aventura: um clique sem querer, a pensar que era só fechar o certificado, apagava tudo.

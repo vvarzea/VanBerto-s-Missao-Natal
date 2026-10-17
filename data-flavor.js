@@ -1,4 +1,4 @@
-// ===== Frases soltas e mensagens de "tempero" — MISSÃO CIBERSEGURANÇA =====
+// ===== Frases soltas e mensagens de "tempero" — MISSÃO NATAL =====
 // PRAISE, PAUSE_TIPS, LEVEL_ENTRY_PHRASES, DYNAMIC_MSGS_CORRECT, DYNAMIC_MSGS_WRONG,
 // VB_LEVEL_INTRO, VB_HIT, VB_QUIZ_CORRECT, VB_QUIZ_WRONG, VB_STAR_POWER, VB_PERFECT_LEVEL
 
@@ -24,31 +24,31 @@ export const PAUSE_TIPS = [
 // Frase curta mostrada ao entrar em cada nível — alinhada por posição no
 // array LEVELS (0-19), NÃO por artIdx.
 export const LEVEL_ENTRY_PHRASES = [
-  "A internet liga o mundo! 🌐",
-  "Uma boa palavra-passe protege-te! 🔐",
-  "Os teus dados são só teus! 🪪",
-  "Nunca estás sozinho online! 🆘",
-  "Cuidado com os vírus! 🦠",
-  "Joga sempre com regras! 🎮",
-  "Pensa antes de publicar! 👣",
-  "Nem tudo o que lês é verdade! 📰",
-  "Cuidado com o phishing! 🎣",
-  "Mantém tudo atualizado! 💻",
-  "A família ajuda a decidir! 👨‍👩‍👧",
-  "Wi-Fi público? Atenção redobrada! 📶",
-  "Guarda sempre uma cópia! 💾",
-  "A tecnologia é para todos! ♿",
-  "Desconfia de ofertas boas demais! 🛒",
-  "Denunciar é um direito! 📢",
-  "A tua identidade também é digital! 🧑‍💻",
-  "A tua privacidade é sagrada! 🔒",
-  "Cuidado com desconhecidos! 🚫",
-  "Os teus direitos existem online! ⚖️"
+  "O Natal tem uma longa história! 🎄",
+  "Luzes a brilhar, energia a poupar! 💡",
+  "À mesa de Natal não falta nada! 🍽️",
+  "Cada país tem o seu Natal! 🌍",
+  "Cada floco de neve é especial! ❄️",
+  "Escolhe prendas à tua idade! 🎮",
+  "O Natal chega até ao espaço! 🛰️",
+  "Um postal, um abraço! ✉️",
+  "Que ritmo de Natal! 🎶",
+  "Há muitos números no Natal! 🧮",
+  "O Natal é melhor em família! 👨‍👩‍👧",
+  "O dia mais curto do ano! 🌗",
+  "Reduzir, reutilizar e reciclar! ♻️",
+  "O Natal é de toda a gente! ♿",
+  "Compara preços e poupa! 🛒",
+  "Ho, ho, ho! Vamos à Lapónia! 🎅",
+  "Que sessão de cinema de Natal! 🎬",
+  "Vermelho, verde e dourado! 🎄",
+  "O Natal também é tecnológico! 💻",
+  "Último nível — Feliz Ano Novo! 🎆"
 ];
 
 export const DYNAMIC_MSGS_CORRECT = [
   "🌟 Fantástico!", "✨ Excelente!", "🎉 És incrível!",
-  "🛡️ Sabia que conseguias!", "🏆 Competência protegida!", "🔐 Muito bem!"
+  "🛡️ Sabia que conseguias!", "🏆 Tesouro de Natal!", "🔐 Muito bem!"
 ];
 
 export const DYNAMIC_MSGS_WRONG = [
@@ -60,26 +60,26 @@ export const DYNAMIC_MSGS_WRONG = [
 // posição no array LEVELS (0-19), NÃO por artIdx. O motor usa sempre
 // VB_LEVEL_INTRO[0] no arranque do jogo (ver dia-crianca.js).
 export const VB_LEVEL_INTRO = [
-  "Hoje vamos recuperar a competência de Navegar em Segurança! 🌐 Estás preparado?",
-  "Uma palavra-passe forte é o teu primeiro escudo digital! 🔐 Vamos descobrir como criá-la?",
-  "Os teus dados pessoais são um tesouro! 🪪 Vamos aprender a protegê-los?",
-  "Nunca estamos sozinhos online! 🆘 Vamos descobrir quem nos ajuda?",
-  "Sinto um vírus por perto! 🦠 Vamos aprender a proteger o computador?",
-  "Jogar com regras é jogar melhor! 🎮 Vamos ver como jogar em segurança?",
-  "Tudo o que publicamos deixa um rasto! 👣 Vamos pensar antes de publicar?",
-  "Nem tudo o que lemos online é verdade! 📰 Vamos aprender a verificar?",
-  "Atenção aos links suspeitos! 🎣 Vamos aprender a reconhecer o phishing?",
-  "Dispositivos atualizados são dispositivos protegidos! 💻 Vamos cuidar deles?",
-  "Em família, decidimos juntos as regras de ecrã! 👨‍👩‍👧 Vamos lá?",
-  "Wi-Fi público pede cuidados redobrados! 📶 Vamos aprender quais?",
-  "Uma cópia de segurança pode salvar-nos de um grande susto! 💾 Vamos fazê-la?",
-  "A tecnologia é para todos! ♿ Vamos torná-la acessível?",
-  "Cuidado com ofertas boas demais para ser verdade! 🛒 Vamos aprender a desconfiar?",
-  "Denunciar é um direito nosso! 📢 Vamos usá-lo sem medo?",
-  "A tua identidade digital também merece proteção! 🧑‍💻 Vamos protegê-la?",
-  "Os teus segredos são teus! 🔒 A privacidade também é um direito!",
-  "Cuidado com desconhecidos online! 🚫 Vamos aprender a reconhecer o perigo?",
-  "Os teus direitos também existem online! ⚖️ Último nível — dá tudo!"
+  "Hoje vamos recuperar os Tesouros de Natal! 🎄 Estás preparado?",
+  "Luzes LED gastam menos energia! 💡 Vamos descobrir mais sobre as luzes de Natal?",
+  "A Consoada é uma festa à mesa! 🍽️ Vamos conhecer os pratos e os doces de Natal?",
+  "Cada país festeja o Natal à sua maneira! 🌍 Vamos viajar pelo mundo?",
+  "Cada floco de neve tem seis pontas! ❄️ Vamos descobrir a ciência da neve?",
+  "Uma consola nova é uma prenda fantástica! 🎮 Vamos ver como escolher bem?",
+  "Até os astronautas festejam o Natal! 🛰️ Vamos até ao espaço?",
+  "Um cartão de Natal diz muito com poucas palavras! ✉️ Vamos descobrir a sua história?",
+  "O Natal tem uma banda sonora especial! 🎶 Vamos ouvir?",
+  "Quem sabe contar sabe poupar! 🧮 Vamos fazer contas de Natal?",
+  "O melhor do Natal é estarmos juntos! 👨‍👩‍👧 Vamos lá?",
+  "O dia mais curto do ano está a chegar! 🌗 Vamos perceber porquê?",
+  "Um Natal verde também é um Natal feliz! ♻️ Vamos reciclar?",
+  "O Natal é de toda a gente! ♿ Vamos incluir todos?",
+  "Compara preços e faz contas! 🛒 Vamos às compras de Natal?",
+  "O Pai Natal mora lá no norte! 🎅 Vamos visitar a Lapónia?",
+  "Há filmes de Natal para todos os gostos! 🎬 Vamos ver quais?",
+  "Vermelho, verde e dourado! 🎄 Vamos enfeitar o Natal?",
+  "O Natal também chega por mensagem e por ecrã! 💻 Vamos ver como?",
+  "Último nível — a festa do Ano Novo! 🎆 Dá tudo!"
 ];
 
 export const VB_HIT = [
@@ -93,9 +93,9 @@ export const VB_HIT = [
 
 export const VB_QUIZ_CORRECT = [
   "INCRÍVEL! Sabias mesmo a resposta! 🏆",
-  "Que craque! Competência recuperada! ✨",
+  "Que craque! Tesouro recuperado! ✨",
   "Fantástico! Estou tão orgulhoso de ti! 🎉",
-  "Isso mesmo! A cibersegurança agradece! 🛡️",
+  "Isso mesmo! O Natal agradece! 🎄",
   "Brilhante! Nada te escapa! 🌟",
   "Que resposta! Mereces uma estrela! ⭐"
 ];
@@ -118,6 +118,6 @@ export const VB_STAR_POWER = [
 export const VB_PERFECT_LEVEL = [
   "PERFEITO! Nenhuma vida perdida! Lendário! 🏆",
   "Uau! Passaste o nível sem um arranhão! ⭐",
-  "Impecável! Guardião da Cibersegurança nível máximo! 🌟",
+  "Impecável! Guardião do Natal nível máximo! 🌟",
   "Incrível! Isso merecia um bónus extra! 🎉"
 ];

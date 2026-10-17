@@ -7,18 +7,18 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { isLastLevelOfRegion, saveMapProgress } from "./map.js?v=20261017natal7";
-import { resetQuizStats, usedQuizByLevel, usedQuizByTheme } from "./quiz.js?v=20261017natal7";
-import { itemsTotal, mapProgress, score, scoreText, set_mapProgress, set_score } from "./state.js?v=20261017natal7";
-import { globalStats, saveGlobalStats } from "./stats.js?v=20261017natal7";
-import { loadNamespace, saveNamespace } from "../storage.js?v=20261017natal7";
-import { resetAchievements } from "../achievements.js?v=20261017natal7";
-import { resetAllStars, getStarRecord, starsForLevel } from "../stars.js?v=20261017natal7";
-import { ARTEFACTS, ARTEFACT_SETS, SET_REACTIONS } from "../data-progression.js?v=20261017natal7";
-import { ensureAudio, beep, SFX } from "../audio.js?v=20261017natal7";
-import { LEVELS, THEMES } from "../data-levels.js?v=20261017natal7";
-import { QUIZ_ARTICLE, HISTORY } from "../data-quiz.js?v=20261017natal7";
-import { BOSSES } from "../data-bosses.js?v=20261017natal7";
+import { isLastLevelOfRegion, saveMapProgress } from "./map.js?v=20261017natal8";
+import { resetQuizStats, usedQuizByLevel, usedQuizByTheme } from "./quiz.js?v=20261017natal8";
+import { itemsTotal, mapProgress, score, scoreText, set_mapProgress, set_score } from "./state.js?v=20261017natal8";
+import { globalStats, saveGlobalStats } from "./stats.js?v=20261017natal8";
+import { loadNamespace, saveNamespace } from "../storage.js?v=20261017natal8";
+import { resetAchievements } from "../achievements.js?v=20261017natal8";
+import { resetAllStars, getStarRecord, starsForLevel } from "../stars.js?v=20261017natal8";
+import { ARTEFACTS, ARTEFACT_SETS, SET_REACTIONS } from "../data-progression.js?v=20261017natal8";
+import { ensureAudio, beep, SFX } from "../audio.js?v=20261017natal8";
+import { LEVELS, THEMES } from "../data-levels.js?v=20261017natal8";
+import { QUIZ_ARTICLE, HISTORY } from "../data-quiz.js?v=20261017natal8";
+import { BOSSES } from "../data-bosses.js?v=20261017natal8";
 
 // Popup curto "Direito recuperado!" — mostrado ao concluir um nível
 // =====================================================
@@ -449,7 +449,7 @@ export function showArtefactGallery(onDone) {
   const total = ARTEFACTS.length;
   const got   = Object.keys(collectedArtefacts).filter(k => !k.includes("set_")).length;
   const pctEl = document.getElementById("agPct");
-  if (pctEl) pctEl.textContent = `${got}/${total} competências recuperadas`;
+  if (pctEl) pctEl.textContent = `${got}/${total} tesouros recuperados`;
 
   // Crachás dos Bosses (novo, pedido: os "Direitos Recuperados" de cada
   // boss apareciam num toast e desapareciam, sem nenhum sítio onde a

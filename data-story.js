@@ -1,22 +1,22 @@
-// ===== Conteúdo narrativo — MISSÃO CIBERSEGURANÇA =====
+// ===== Conteúdo narrativo — MISSÃO NATAL =====
 // Ficheiro puramente de dados, sem lógica de jogo.
 
 export const REGION_INTRO = {
   origens: {
-    vanberto: "Vamos aprender as bases da Cibersegurança... e proteger os nossos dispositivos de vírus!",
-    arrival: "Bem-vindo ao Reino dos Fundamentos — a internet, as palavras-passe e quem nos protege. 🌐 Está tudo coberto de neve! ❄️"
+    vanberto: "Vamos descobrir a história e as tradições do Natal... e recuperar os primeiros Tesouros!",
+    arrival: "Bem-vindo ao Reino das Tradições — a história, as luzes, a mesa e a neve do Natal. 🎄 Está tudo coberto de neve! ❄️"
   },
   desenvolvimento: {
-    vanberto: "Sinto mensagens estranhas e links suspeitos por perto... vamos ter espírito crítico!",
-    arrival: "Bem-vindo ao Vale da Comunicação Segura — jogos, publicações e o perigo do phishing. 📡 Até as nuvens têm luzinhas de Natal! 🎄"
+    vanberto: "Ouço música e vejo postais por todo o lado... vamos descobrir os segredos do Natal!",
+    arrival: "Bem-vindo ao Vale das Prendas e da Música — prendas, espaço, cartões e canções. 🎶 Até as nuvens têm luzinhas de Natal! 🎄"
   },
   protecao: {
-    vanberto: "Esta fortaleza esconde spam e burlas... vamos proteger os nossos dados com cuidado!",
-    arrival: "A Fortaleza da Proteção Digital guarda os dispositivos, a família e as compras seguras. 🛡️ No Natal, as compras online pedem ainda mais cuidado! 🎁"
+    vanberto: "Esta fortaleza guarda a família, o planeta e as compras... vamos fazer um Natal feliz e verde!",
+    arrival: "A Fortaleza da Família guarda a matemática, as tradições, a reciclagem e as compras de Natal. 🏡 No Natal, as compras pedem ainda mais atenção! 🎁"
   },
   participacao: {
-    vanberto: "Estamos quase lá! Sinto que alguém anda a espiar nas sombras...",
-    arrival: "A Cidade da Identidade Digital guarda a tua privacidade e a tua identidade online. 🔒 Até o Pai Natal tem de guardar bem a lista de prendas! 🎅"
+    vanberto: "Estamos quase lá! Sinto que alguém anda a espiar nas sombras... vamos proteger a magia do Natal!",
+    arrival: "A Cidade da Magia guarda o Pai Natal, os filmes, os enfeites e a passagem de ano. 🎅 Até o Pai Natal tem de guardar bem a lista de prendas! 🎁"
   }
 };
 
@@ -75,11 +75,11 @@ export const BOSS_VICTORY_VB = {
 // Frases curtas mostradas (sem parar o jogo, só um "floatie") sempre que se
 // apanha um objeto de conhecimento no combate do Monstro do Phishing.
 export const KNOWLEDGE_FACTS = [
-  "🔐 Uma boa palavra-passe protege-nos.",
-  "🔗 Nunca clicar em links suspeitos.",
-  "🌟 Cibersegurança é um hábito diário.",
-  "🧠 Pensar antes de clicar é um super-poder.",
-  "🆘 Pedir ajuda também é proteger-nos."
+  "🎄 O Natal é a 25 de dezembro.",
+  "🎁 Dar é tão bom como receber.",
+  "⭐ Uma estrela no topo da árvore!",
+  "🔔 Os guizos tilintam no trenó.",
+  "❄️ Cada floco de neve tem seis pontas."
 ];
 
 // Falas curtas do boss em marcos de HP durante o combate.
@@ -108,24 +108,24 @@ export const BOSS_HP_TAUNTS = {
 
 // Um "letreiro"/NPC por nível — alinhado por artIdx (0-19), tal como HISTORY[].
 export const NPC_SIGNS = [
-  { emoji:"🌐", text:"Sabias que a primeira página web foi publicada em 1991?" },
-  { emoji:"🔐", text:"Uma palavra-passe com 12 ou mais carateres é muito mais difícil de adivinhar!" },
-  { emoji:"🪪", text:"Nunca partilhes a tua morada ou telefone com quem só conheces online." },
-  { emoji:"🆘", text:"Linha Internet Segura: 800 21 90 90 (gratuita, dias úteis). Em perigo, liga 112!" },
-  { emoji:"🦠", text:"Um antivírus atualizado é como uma vacina para o teu computador!" },
-  { emoji:"🎮", text:"Sabias que os jogos têm uma idade mínima recomendada (PEGI) escrita na caixa?" },
-  { emoji:"👣", text:"Tudo o que publicas online deixa uma pegada digital — pensa sempre antes de publicar!" },
-  { emoji:"📰", text:"Antes de acreditares numa notícia chocante, procura-a noutra fonte de confiança." },
-  { emoji:"🎣", text:"Um link urgente e suspeito é quase sempre um sinal de phishing!" },
-  { emoji:"💻", text:"Atualizar o teu telemóvel ou computador fecha portas a quem quer atacar." },
-  { emoji:"👨‍👩‍👧", text:"Combinar regras de ecrã com a família ajuda todos a navegar com equilíbrio." },
-  { emoji:"📶", text:"Em Wi-Fi público, evita iniciar sessão em contas com dados importantes." },
-  { emoji:"💾", text:"Uma cópia de segurança pode salvar-te de perder um trabalho inteiro!" },
-  { emoji:"♿", text:"Leitores de ecrã e legendas tornam a internet acessível a todos!" },
-  { emoji:"🛒", text:"Uma oferta boa demais para ser verdade... normalmente não é verdade." },
-  { emoji:"📢", text:"O botão de denúncia existe para te proteger — usa-o sem medo!" },
-  { emoji:"🧑‍💻", text:"A maioria das redes sociais só permite criar conta a partir dos 13 anos." },
-  { emoji:"🔒", text:"Pede sempre autorização antes de publicares uma foto com outras pessoas." },
-  { emoji:"🚫", text:"Se um desconhecido insistir para guardares segredo, conta sempre a um adulto." },
-  { emoji:"⚖️", text:"Sabias que, desde 2021, a ONU reconhece direitos das crianças também online?" }
+  { emoji:"🎄", text:"Sabias que a árvore de Natal nasceu na Alemanha, há mais de 400 anos?" },
+  { emoji:"💡", text:"As luzes LED gastam muito menos energia do que as lâmpadas antigas!" },
+  { emoji:"🍽️", text:"Em Portugal, a ceia de 24 de dezembro chama-se Consoada!" },
+  { emoji:"🌍", text:"Na Austrália o Natal é no verão, e há quem vá à praia!" },
+  { emoji:"❄️", text:"Quase todos os flocos de neve têm seis pontas!" },
+  { emoji:"🎮", text:"O número PEGI na caixa do jogo indica a idade recomendada!" },
+  { emoji:"🛰️", text:"A Estação Espacial Internacional dá cerca de 16 voltas à Terra por dia!" },
+  { emoji:"✉️", text:"O primeiro cartão de Natal comercial foi enviado em 1843!" },
+  { emoji:"🎶", text:"«Jingle Bells» foi publicada em 1857, com outro título!" },
+  { emoji:"🧮", text:"Na canção «Os 12 Dias de Natal» há 364 prendas ao todo!" },
+  { emoji:"👨‍👩‍👧", text:"O melhor do Natal é estar em família e ajudar quem precisa!" },
+  { emoji:"🌗", text:"Por volta de 21 de dezembro é o dia mais curto do ano!" },
+  { emoji:"♻️", text:"Azul para papel, amarelo para plástico e metal, verde para vidro!" },
+  { emoji:"♿", text:"O Braille usa pontos em relevo para as pessoas cegas lerem!" },
+  { emoji:"🛒", text:"Nas compras online, tens em regra 14 dias para devolver!" },
+  { emoji:"🎅", text:"Em finlandês, o Pai Natal chama-se Joulupukki!" },
+  { emoji:"🎬", text:"O Grinch foi criado pelo Dr. Seuss, em 1957!" },
+  { emoji:"🎄", text:"A estrela-de-natal vem do México!" },
+  { emoji:"💻", text:"A primeira mensagem SMS do mundo foi «Merry Christmas»!" },
+  { emoji:"🎆", text:"No Funchal há um dos fogos de artifício mais famosos do mundo!" }
 ];

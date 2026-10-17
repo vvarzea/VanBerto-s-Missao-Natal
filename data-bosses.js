@@ -135,7 +135,7 @@ export const BOSSES = [
     // família de mundo (ver data-levels.js/THEMES), por isso "saltar" para
     // um índice de outro mundo já não faz sentido; a arena usa agora o
     // mesmo tema/imagem do nível anterior, como todos os outros ecrãs.
-    rightRecovered: { emoji: "🕵️", name: "Alerta Anti-Phishing" },
+    rightRecovered: { emoji: "⭐", name: "Estrela do Espírito Natalício" },
     // Arena simples: do tamanho da janela (960x540, sem scroll), chão
     // principal + 3 plataformas (pedido: os 4 bosses com 3 plataformas
     // cada, tal como o Robô do Spam já tinha).
@@ -320,7 +320,7 @@ export const BOSSES = [
     quizTheme: "virus_malware",
     hp: 3,                     // 4→3: agora são sempre 3 saltos na cabeça, como os outros bosses "stomp"
     // themeIdx próprio removido — ver comentário igual no boss do phishing.
-    rightRecovered: { emoji: "🛡️", name: "Dispositivo Protegido" },
+    rightRecovered: { emoji: "🔔", name: "Sino do Natal" },
     // Arena do tamanho do ecrã (960x540, sem scroll) — chão principal +
     // 3 plataformas, tal como os outros 3 bosses (pedido: os 4 bosses com
     // 3 plataformas cada, para dar a mesma variedade de salto em todos).
@@ -452,7 +452,7 @@ export const BOSSES = [
                               // perguntas a mais/desencontradas em vez de reforçarem o mesmo tema.
     hp: 3,                     // 4→3: agora são sempre 3 saltos na cabeça
     // themeIdx próprio removido — ver comentário igual no boss do phishing.
-    rightRecovered: { emoji: "🔐", name: "Privacidade Protegida" },
+    rightRecovered: { emoji: "🎄", name: "Árvore Iluminada" },
     // Arena do tamanho do ecrã, tal como o Monstro — agora com 3
     // plataformas e movimento de patrulha (ver comentário completo junto
     // a movementType, acima), em vez do teletransporte antigo.
@@ -596,7 +596,7 @@ export const BOSSES = [
     quizTheme: "spam_compras",
     hp: 3,                     // 5→3: agora são sempre 3 saltos na cabeça
     // themeIdx próprio removido — ver comentário igual no boss do phishing.
-    rightRecovered: { emoji: "📭", name: "Caixa de Correio Limpa" },
+    rightRecovered: { emoji: "📭", name: "Postais de Natal a Salvo" },
     // Arena do tamanho do ecrã, tal como o Monstro.
     arena: {
       worldW: 960,

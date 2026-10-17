@@ -53,7 +53,7 @@ export const THEMES = [
 // Ver comentário completo em dia-crianca.js junto a "let pipes=[]".
 export const LEVELS = [
   {
-    name: "Nível 1 — Nasce a Internet",
+    name: "Nível 1 — A História do Natal",
     artIdx:0, theme:0, quizTheme:"historia_internet", worldW:2900,
     spawn:{x:480,y:460}, doorX:2400,
     // signX: por defeito o letreiro ficaria em spawn.x+240 (=720). Colocado
@@ -95,7 +95,7 @@ export const LEVELS = [
     malwares:[{x:1800,y:480,vx:0,pattern:"mini"},{x:2260,y:480,vx:-150,pattern:"patrol"}]
   },
   {
-    name: "Nível 2 — Palavras-passe Fortes",
+    name: "Nível 2 — Luzes de Natal",
     artIdx:1, theme:1, quizTheme:"palavras_passe", worldW:2800,
     spawn:{x:480,y:460}, doorX:2350,
     platforms:[
@@ -105,13 +105,13 @@ export const LEVELS = [
     ],
     // 1 par, a meio do nível — recompensa: ❤️ vida extra.
     pipes:[
-      {x:1180,y:337,room:true,kind:"heart",fact:"Sabias que os sites falsos de lojas aparecem mais perto do Natal, com preços baixíssimos?"}
+      {x:1180,y:337,room:true,kind:"heart",fact:"Sabias que as luzes LED de Natal gastam muito menos energia do que as lâmpadas antigas?"}
     ],
     items:[{x:900,y:400,kind:"balao"},{x:1460,y:260,kind:"medalha"},{x:1740,y:330,kind:"estrela"}],
     malwares:[{x:1320,y:480,vx:0,pattern:"mini"},{x:2140,y:480,vx:-155,pattern:"patrol"}]
   },
   {
-    name: "Nível 3 — Não Partilhes Dados Pessoais",
+    name: "Nível 3 — A Mesa de Natal em Portugal",
     artIdx:2, theme:2, quizTheme:"dados_pessoais", worldW:2900,
     spawn:{x:480,y:460}, doorX:2500,
     // signX: por defeito o letreiro/informação ficaria em spawn.x+240 (=720), que
@@ -132,7 +132,7 @@ export const LEVELS = [
     malwares:[{x:1000,y:480,vx:0,pattern:"mini"},{x:1700,y:480,vx:-160,pattern:"patrol"},{x:2350,y:480,vx:155,pattern:"patrol"}]
   },
   {
-    name: "Nível 4 — Quem Nos Protege Online",
+    name: "Nível 4 — O Natal pelo Mundo",
     artIdx:3, theme:3, quizTheme:"instituicoes_apoio", worldW:3300,
     spawn:{x:480,y:460}, doorX:2950,
     // Layout: "trampolim central obrigatório" — vão largo a meio onde o trampolim é o único caminho
@@ -156,7 +156,7 @@ export const LEVELS = [
     pipes:[
       {x:650,y:474,toX:600,toY:157},
       {x:600,y:157,toX:650,toY:474},
-      {x:1320,y:417,room:true,kind:"estrela",returnX:1880,returnY:417,fact:"Sabias que o cadeado no browser não garante que uma loja online é de confiança?"}
+      {x:1320,y:417,room:true,kind:"estrela",returnX:1880,returnY:417,fact:"Sabias que na Islândia há 13 duendes que visitam as crianças nos dias antes do Natal?"}
     ],
     items:[{x:840,y:390,kind:"brinquedo"},{x:1080,y:310,kind:"estrela"},{x:1600,y:330,kind:"duplosalto"},{x:2100,y:310,kind:"balao"},{x:2580,y:310,kind:"medalha"},{x:560,y:470,kind:"heart"},{x:650,y:165,kind:"balao"}],
     malwares:[{x:980,y:480,vx:180,pattern:"patrol"},{x:1580,y:480,vx:-183,pattern:"jumper"},{x:2040,y:480,vx:182,pattern:"jumper"},{x:2450,y:480,vx:-179,pattern:"jumper"},{x:2780,y:480,vx:177}],
@@ -164,7 +164,7 @@ export const LEVELS = [
     secrets:[{x:1190,y:355,kind:"estrela",points:25}]
   },
   {
-    name: "Nível 5 — Vírus e Malware",
+    name: "Nível 5 — A Ciência da Neve",
     artIdx:4, theme:4, quizTheme:"virus_malware", worldW:3100,
     spawn:{x:480,y:460}, doorX:2950,
     platforms:[
@@ -186,7 +186,7 @@ export const LEVELS = [
     secrets:[{x:740,y:470,kind:"estrela",points:20}]
   },
   {
-    name: "Nível 6 — Jogar em Segurança",
+    name: "Nível 6 — Prendas Tecnológicas",
     artIdx:5, theme:5, quizTheme:"jogos_seguros", worldW:3100,
     spawn:{x:480,y:460}, doorX:2700,
     // Layout: ilhas a alturas variadas — umas altas, outras baixas, sem padrão regular
@@ -204,7 +204,7 @@ export const LEVELS = [
     ],
     // 1 par, perto do fim do nível — recompensa: 🛡️ escudo.
     pipes:[
-      {x:2260,y:407,room:true,kind:"medalha",fact:"Sabias que ninguém de confiança te pede o código do MB WAY ou do cartão por mensagem?"}
+      {x:2260,y:407,room:true,kind:"medalha",fact:"Sabias que o PEGI, na caixa de um jogo, indica a idade recomendada para jogar?"}
     ],
     items:[{x:860,y:380,kind:"medalha"},{x:1100,y:290,kind:"duplosalto"},{x:1560,y:260,kind:"estrela"},{x:2050,y:290,kind:"brinquedo"},{x:560,y:470,kind:"heart"}],
     malwares:[{x:1010,y:480,vx:170},{x:1480,y:480,vx:-170},{x:1940,y:480,vx:172},{x:2400,y:480,vx:-168},{x:2720,y:480,vx:165}],
@@ -212,7 +212,7 @@ export const LEVELS = [
     secrets:[{x:2160,y:355,kind:"estrela",points:20}]
   },
   {
-    name: "Nível 7 — A Tua Pegada Digital",
+    name: "Nível 7 — O Natal no Espaço",
     artIdx:6, theme:6, quizTheme:"pegada_digital", worldW:2800,
     spawn:{x:480,y:460}, doorX:2630,
     // signX: por defeito o letreiro/informação ficaria em spawn.x+240 (=720),
@@ -256,7 +256,7 @@ export const LEVELS = [
     secrets:[{x:1060,y:415,kind:"estrela",points:20}]
   },
   {
-    name: "Nível 8 — Notícias Falsas (Fake News)",
+    name: "Nível 8 — Cartões e Correio de Natal",
     artIdx:7, theme:7, quizTheme:"fake_news", worldW:3400,
     spawn:{x:480,y:460}, doorX:3050,
     // Layout: "cascata de terraços" — desce e sobe de forma orgânica, com plataformas a alturas muito variadas
@@ -280,7 +280,7 @@ export const LEVELS = [
     pipes:[
       {x:570,y:474,toX:450,toY:157},
       {x:450,y:157,toX:570,toY:474},
-      {x:1820,y:327,room:true,kind:"balaofesta",fact:"Sabias que as mensagens de «encomenda retida» que pedem pagamento são uma burla comum?"}
+      {x:1820,y:327,room:true,kind:"balaofesta",fact:"Sabias que o primeiro cartão de Natal comercial foi enviado em 1843, em Londres?"}
     ],
     items:[{x:800,y:220,kind:"estrela"},{x:980,y:280,kind:"balao"},{x:1600,y:220,kind:"medalha"},{x:2270,y:290,kind:"brinquedo"},{x:2720,y:260,kind:"duplosalto"},{x:500,y:165,kind:"medalha"}],
     malwares:[{x:940,y:480,vx:185,pattern:"jumper"},{x:1490,y:480,vx:-188,pattern:"jumper"},{x:1960,y:480,vx:186,pattern:"jumper"},{x:2400,y:480,vx:-184,pattern:"jumper"},{x:2830,y:480,vx:182,pattern:"patrol"}],
@@ -289,7 +289,7 @@ export const LEVELS = [
     secrets:[{x:660,y:462,kind:"heart"}]
   },
   {
-    name: "Nível 9 — Reconhece o Phishing",
+    name: "Nível 9 — Músicas de Natal",
     artIdx:8, theme:8, quizTheme:"phishing", worldW:3500,
     spawn:{x:480,y:460}, doorX:3100,
     platforms:[
@@ -305,7 +305,7 @@ export const LEVELS = [
     pipes:[
       {x:1760,y:325,toX:1810,toY:99},
       {x:1810,y:99,toX:1760,toY:325},
-      {x:2320,y:325,room:true,kind:"estrela",fact:"Sabias que um «vale-presente grátis» num link desconhecido costuma ser phishing?"}
+      {x:2320,y:325,room:true,kind:"estrela",fact:"Sabias que «Jingle Bells» foi publicada em 1857 com outro título: «One Horse Open Sleigh»?"}
     ],
     items:[{x:920,y:342,kind:"estrela"},{x:1480,y:248,kind:"medalha"},{x:2040,y:392,kind:"balao"},{x:2600,y:392,kind:"brinquedo"},{x:560,y:470,kind:"heart"},{x:1760,y:107,kind:"heart"}],
     malwares:[{x:1060,y:480,vx:190,pattern:"jumper"},{x:1660,y:480,vx:-195,pattern:"jumper"},{x:2260,y:480,vx:190,pattern:"jumper"},{x:2860,y:480,vx:-185,pattern:"jumper"},{x:3200,y:480,vx:188,pattern:"jumper"}],
@@ -317,7 +317,7 @@ export const LEVELS = [
     secrets:[{x:1150,y:430,kind:"heart"}]
   },
   {
-    name: "Nível 10 — Cuida dos Teus Dispositivos",
+    name: "Nível 10 — A Matemática de Natal",
     artIdx:9, theme:9, quizTheme:"dispositivos", worldW:3600,
     spawn:{x:480,y:460}, doorX:3200,
     // Layout: "escadinhas duplas" — dois picos com vale ao meio
@@ -342,7 +342,7 @@ export const LEVELS = [
     secrets:[{x:1600,y:370,kind:"estrela",points:25}]
   },
   {
-    name: "Nível 11 — Regras de Ecrã em Família",
+    name: "Nível 11 — Tradições em Família",
     artIdx:10, theme:10, quizTheme:"regras_familia", worldW:3200,
     spawn:{x:480,y:460}, doorX:2850,
     // Layout: pirâmide central alta + plataformas laterais baixas
@@ -369,7 +369,7 @@ export const LEVELS = [
     secrets:[{x:680,y:462,kind:"heart"}]
   },
   {
-    name: "Nível 12 — Cuidado com o Wi-Fi Público",
+    name: "Nível 12 — O Dia Mais Curto do Ano",
     artIdx:11, theme:11, quizTheme:"wifi_publico", worldW:3650,
     spawn:{x:480,y:460}, doorX:3340,
     // Layout: "mini-mundos" — 3 grupos de plataformas isolados com vãos entre eles
@@ -392,7 +392,7 @@ export const LEVELS = [
       {x:3370,y:520,w:960,h:28}
     ],
     pipes:[
-      {x:2100,y:307,room:true,kind:"medalha",fact:"Sabias que o Wi-Fi do centro comercial é público: evita fazer pagamentos nele?"}
+      {x:2100,y:307,room:true,kind:"medalha",fact:"Sabias que o dia mais curto do ano, no hemisfério norte, é por volta de 21 de dezembro?"}
     ],
     items:[{x:820,y:380,kind:"balao"},{x:1040,y:290,kind:"estrela"},{x:1640,y:300,kind:"duplosalto"},{x:2320,y:220,kind:"medalha"},{x:2780,y:390,kind:"brinquedo"},{x:560,y:470,kind:"heart"}],
     malwares:[{x:950,y:480,vx:194,pattern:"patrol"},{x:1530,y:480,vx:-198,pattern:"jumper"},{x:1980,y:480,vx:196,pattern:"jumper"},{x:2440,y:480,vx:-194,pattern:"patrol"},{x:2880,y:480,vx:192,pattern:"jumper"}],
@@ -400,7 +400,7 @@ export const LEVELS = [
     secrets:[{x:3110,y:263,kind:"balao",points:15}]
   },
   {
-    name: "Nível 13 — Faz Cópias de Segurança",
+    name: "Nível 13 — Embrulhos e Reciclagem",
     artIdx:12, theme:12, quizTheme:"copias_seguranca", worldW:3700,
     spawn:{x:480,y:460}, doorX:3300,
     // Layout: "labirinto horizontal" — plataformas em ziguezague apertado exige precisão
@@ -428,7 +428,7 @@ export const LEVELS = [
     secrets:[{x:680,y:462,kind:"heart"}]
   },
   {
-    name: "Nível 14 — Tecnologia para Todos",
+    name: "Nível 14 — Um Natal para Todos",
     artIdx:13, theme:13, quizTheme:"acessibilidade_digital", worldW:3750,
     spawn:{x:480,y:460}, doorX:3350,
     platforms:[
@@ -451,7 +451,7 @@ export const LEVELS = [
     pipes:[
       {x:1400,y:397,toX:1450,toY:111},
       {x:1450,y:111,toX:1400,toY:397},
-      {x:2960,y:397,room:true,kind:"balaofesta",fact:"Sabias que as prendas ligadas à internet precisam de uma palavra-passe nova?"}
+      {x:2960,y:397,room:true,kind:"balaofesta",fact:"Sabias que o Braille usa pontos em relevo e foi criado por Louis Braille?"}
     ],
     movingPlatforms:[
       {x:1270,y:400,w:130,h:22,rangeX:120,rangeY:0,speed:80},
@@ -475,7 +475,7 @@ export const LEVELS = [
     secrets:[{x:2895,y:390,kind:"estrela",points:30}]
   },
   {
-    name: "Nível 15 — Spam e Compras Seguras",
+    name: "Nível 15 — Compras de Natal",
     artIdx:14, theme:14, quizTheme:"spam_compras", worldW:3800,
     spawn:{x:480,y:460}, doorX:3400,
     platforms:[
@@ -501,7 +501,7 @@ export const LEVELS = [
     secrets:[{x:760,y:470,kind:"medalha"},{x:2820,y:262,kind:"estrela",points:30}]
   },
   {
-    name: "Nível 16 — Denuncia e Pede Ajuda",
+    name: "Nível 16 — O Pai Natal e a Lapónia",
     artIdx:15, theme:15, quizTheme:"denuncia_conteudo", worldW:3850,
     spawn:{x:480,y:460}, doorX:3450,
     // Layout: "degraus duplos" — sobe dois andares, desce dois andares, plataformas estreitas
@@ -523,7 +523,7 @@ export const LEVELS = [
       {x:3530,y:520,w:960,h:28}
     ],
     pipes:[
-      {x:2860,y:247,room:true,kind:"heart",fact:"Sabias que fotos das prendas e da casa podem mostrar onde moras? Pensa antes de partilhar!"},
+      {x:2860,y:247,room:true,kind:"heart",fact:"Sabias que a Aldeia do Pai Natal, na Finlândia, fica mesmo em cima do Círculo Polar Ártico?"},
       // Túnel decorativo — mantido perto do início, afastado da plataforma
       // em x:820 (variedade: nem todos os túneis de um nível ficam juntos).
       {x:680,y:474,decorative:true}
@@ -535,7 +535,7 @@ export const LEVELS = [
     secrets:[{x:1100,y:273,kind:"estrela",points:25}]
   },
   {
-    name: "Nível 17 — A Tua Identidade Digital",
+    name: "Nível 17 — Filmes e Histórias de Natal",
     artIdx:16, theme:16, quizTheme:"identidade_digital", worldW:3900,
     spawn:{x:480,y:460}, doorX:3500,
     // Layout: "cultura em círculos" — plataformas em grupos de 3 como constelações
@@ -567,7 +567,7 @@ export const LEVELS = [
     secrets:[{x:2020,y:283,kind:"estrela",points:25}]
   },
   {
-    name: "Nível 18 — Respeita a Privacidade",
+    name: "Nível 18 — Enfeites de Natal",
     artIdx:17, theme:17, quizTheme:"privacidade", worldW:3950,
     spawn:{x:480,y:460}, doorX:3550,
     // ══ MECÂNICA ESPECIAL: ESTEIRA — PLATAFORMAS TODAS EM MOVIMENTO ══
@@ -618,7 +618,7 @@ export const LEVELS = [
     secrets:[{x:1820,y:263,kind:"estrela",points:30}]
   },
   {
-    name: "Nível 19 — Cuidado com Desconhecidos",
+    name: "Nível 19 — O Natal Tecnológico",
     artIdx:18, theme:18, quizTheme:"contacto_desconhecidos", worldW:4000,
     spawn:{x:480,y:460}, doorX:3600,
     // Layout: "floresta" — muitas plataformas pequenas a alturas variadas, como ramos de árvores
@@ -646,7 +646,7 @@ export const LEVELS = [
     pipes:[
       {x:1160,y:397,toX:1210,toY:111},
       {x:1210,y:111,toX:1160,toY:397},
-      {x:2920,y:297,room:true,kind:"balaofesta",fact:"Sabias que jogos e prendas digitais só se devem comprar nas lojas oficiais?"}
+      {x:2920,y:297,room:true,kind:"balaofesta",fact:"Sabias que a primeira mensagem SMS do mundo, em 1992, dizia «Merry Christmas»?"}
     ],
     items:[{x:800,y:220,kind:"estrela"},{x:1520,y:230,kind:"balao"},{x:1920,y:220,kind:"duplosalto"},{x:2720,y:210,kind:"medalha"},{x:3120,y:380,kind:"brinquedo"},{x:560,y:470,kind:"heart"},{x:1160,y:119,kind:"balao"}],
     malwares:[{x:880,y:480,vx:208,pattern:"patrol"},{x:1440,y:480,vx:-212,pattern:"jumper"},{x:2020,y:480,vx:208,pattern:"jumper"},{x:2620,y:480,vx:-204,pattern:"jumper"},{x:3220,y:480,vx:-206,pattern:"patrol"}],
@@ -659,7 +659,7 @@ export const LEVELS = [
     secrets:[{x:1620,y:193,kind:"estrela",points:35},{x:2820,y:173,kind:"heart"}]
   },
   {
-    name: "Nível 20 — Direitos e Deveres Digitais",
+    name: "Nível 20 — Passagem de Ano e Ano Novo",
     artIdx:19, theme:19, quizTheme:"direitos_digitais", worldW:4100,
     spawn:{x:480,y:460}, doorX:3700,
     // Layout: "circuito digital" — plataformas em padrão de circuito impresso: retas longas com viragens bruscas
@@ -682,7 +682,7 @@ export const LEVELS = [
     pipes:[
       {x:1920,y:317,toX:1970,toY:91},
       {x:1970,y:91,toX:1920,toY:317},
-      {x:3300,y:387,room:true,kind:"medalha",fact:"Sabias que, se algo parece bom demais para ser verdade, deves pedir ajuda a um adulto?"},
+      {x:3300,y:387,room:true,kind:"medalha",fact:"Sabias que em Portugal muita gente come 12 passas à meia-noite, uma por cada desejo?"},
       // Túnel decorativo — perto do fim, no chão fixo, antes da porta,
       // afastado da plataforma em x:3300 (que fica logo por cima).
       {x:3480,y:474,decorative:true}
