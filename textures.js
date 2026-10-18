@@ -590,20 +590,20 @@ function makeBossTextures(scene){
   // sempre exatamente as mesmas cores — evita o "cada estado com o seu
   // tom" que aconteceria copiando valores à mão em cada função.
   const PH = {
-    cloakDark:  "#0b1330",
-    cloakMid:   "#182a56",
-    cloakLight: "#2c4a86",
-    trim:       "#39d6ff",
-    glow:       "#8ff2ff",
-    screenBg:   "#081026",
-    frame:      "#dbe2ee",
-    frameDark:  "#8f9ab0",
-    belt:       "#4a3220",
-    buckle:     "#c7cedb",
-    claw:       "#eef2f7",
-    clawLine:   "#182a56",
-    hatDark:    "#0c1730",
-    envelope:   "#f4f7fb",
+    cloakDark:  "#0b2a14",
+    cloakMid:   "#1d6b34",
+    cloakLight: "#2f9a4f",
+    trim:       "#ffd23f",
+    glow:       "#fff08a",
+    screenBg:   "#1a1006",
+    frame:      "#f4e9d0",
+    frameDark:  "#b9a77c",
+    belt:       "#8e1218",
+    buckle:     "#ffd23f",
+    claw:       "#f7f1e1",
+    clawLine:   "#1d6b34",
+    hatDark:    "#b3191f",
+    envelope:   "#ffd23f",
     warn:       "#ff3050"
   };
 
@@ -668,7 +668,7 @@ function makeBossTextures(scene){
     // orla a brilhar em ciano — dá o ar de "energia" que percorre o manto
     ctx.save();
     ctx.shadowColor = PH.trim; ctx.shadowBlur = 7;
-    ctx.strokeStyle = "rgba(57,214,255,0.55)"; ctx.lineWidth = 1.3;
+    ctx.strokeStyle = "rgba(255,210,63,0.55)"; ctx.lineWidth = 1.3;
     ctx.stroke();
     ctx.restore();
 
@@ -681,17 +681,15 @@ function makeBossTextures(scene){
     ctx.strokeStyle = PH.cloakMid; ctx.lineWidth = 2; ctx.lineCap = "round";
     ctx.beginPath(); ctx.arc(C, C + 10.5, 3.6, Math.PI * 0.1, Math.PI * 1.35); ctx.stroke();
 
-    // crachá de "email falso" — mantém a identidade "phishing" já usada na
-    // versão anterior deste boss, só re-tonalizado para a nova paleta
-    ctx.fillStyle = PH.envelope;
-    ctx.beginPath(); ctx.roundRect(C - 11, C - 6, 22, 15, 2); ctx.fill();
-    ctx.strokeStyle = PH.cloakDark; ctx.lineWidth = 1.3; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(C - 11, C - 6); ctx.lineTo(C, C + 3); ctx.lineTo(C + 11, C - 6); ctx.stroke();
-    ctx.fillStyle = PH.warn;
-    ctx.beginPath(); ctx.arc(C + 6, C + 6, 4.4, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = "#fffaff"; ctx.font = "bold 7px sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
-    ctx.fillText("!", C + 6, C + 6.5);
-    ctx.textBaseline = "alphabetic";
+    // estrela dourada no peito (em vez do crachá de e-mail)
+    ctx.fillStyle = "#ffd23f"; ctx.strokeStyle = "#8a5f00"; ctx.lineWidth = 1.4; ctx.lineJoin = "round";
+    ctx.beginPath();
+    for (let k = 0; k < 10; k++) {
+      const ang = -Math.PI / 2 + k * Math.PI / 5, rr = (k % 2 === 0) ? 10 : 4.4;
+      const px = C + Math.cos(ang) * rr, py = C + 2 + Math.sin(ang) * rr;
+      if (k === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.closePath(); ctx.fill(); ctx.stroke();
   }
 
   // Botas curtas e largas, sempre na mesma posição em todos os frames — o
@@ -726,7 +724,7 @@ function makeBossTextures(scene){
     ctx.beginPath(); ctx.roundRect(C - 18, 22 + dy, 36, 24, 5); ctx.fill();
     ctx.save();
     ctx.shadowColor = PH.trim; ctx.shadowBlur = 8;
-    ctx.strokeStyle = "rgba(57,214,255,0.5)"; ctx.lineWidth = 1.2;
+    ctx.strokeStyle = "rgba(255,210,63,0.5)"; ctx.lineWidth = 1.2;
     ctx.stroke();
     ctx.restore();
   }
@@ -735,35 +733,30 @@ function makeBossTextures(scene){
   // pequeno emblema de anzol em ciano — reforça "phishing" = pesca ilegal
   // de dados, o mesmo raciocínio do anzol na cana que os braços seguram.
   function drawPhishingHat(ctx) {
-    ctx.fillStyle = PH.hatDark;
-    ctx.beginPath(); ctx.ellipse(C, 17, 26, 6.5, 0, 0, Math.PI * 2); ctx.fill();
+    // gorro de duende: aba branca + gorro vermelho caído para o lado, com guizo
+    ctx.fillStyle = "#fbfbfb";
+    ctx.beginPath(); ctx.ellipse(C, 18, 25, 6.5, 0, 0, Math.PI * 2); ctx.fill();
     ctx.strokeStyle = PH.cloakDark; ctx.lineWidth = 2; ctx.stroke();
-    ctx.save();
-    ctx.shadowColor = PH.trim; ctx.shadowBlur = 5;
-    ctx.strokeStyle = "rgba(57,214,255,0.5)"; ctx.lineWidth = 1.1;
-    ctx.beginPath(); ctx.ellipse(C, 17, 26, 6.5, 0, 0, Math.PI); ctx.stroke();
-    ctx.restore();
-
-    const grad = ctx.createLinearGradient(C - 16, 0, C + 16, 20);
-    grad.addColorStop(0, "#16264d");
+    const grad = ctx.createLinearGradient(C - 16, 0, C + 28, 20);
+    grad.addColorStop(0, "#e53935");
     grad.addColorStop(1, PH.hatDark);
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.moveTo(C - 17, 18);
-    ctx.quadraticCurveTo(C - 19, 5, C - 9, 2);
-    ctx.quadraticCurveTo(C - 3, 8, C - 1, 10);
-    ctx.quadraticCurveTo(C + 3, 6, C + 8, 6);
-    ctx.quadraticCurveTo(C + 18, 5, C + 17, 18);
+    ctx.quadraticCurveTo(C - 15, 3, C + 4, 3);
+    ctx.quadraticCurveTo(C + 20, 3, C + 28, 13);
+    ctx.quadraticCurveTo(C + 17, 11, C + 17, 18);
     ctx.closePath();
     ctx.fill();
     ctx.strokeStyle = PH.cloakDark; ctx.lineWidth = 2; ctx.stroke();
-    ctx.strokeStyle = "rgba(0,0,0,0.35)"; ctx.lineWidth = 1.6;
-    ctx.beginPath(); ctx.moveTo(C - 1, 10); ctx.lineTo(C + 3, 17); ctx.stroke();
-
-    ctx.fillStyle = PH.glow;
-    ctx.beginPath(); ctx.arc(C - 5, 12, 3.6, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = PH.glow; ctx.lineWidth = 1.5; ctx.lineCap = "round";
-    ctx.beginPath(); ctx.moveTo(C - 5, 15); ctx.lineTo(C - 5, 18); ctx.arc(C - 3, 18, 2, Math.PI, Math.PI * 0.1, true); ctx.stroke();
+    // pompom e guizo na ponta
+    ctx.fillStyle = "#fbfbfb";
+    ctx.beginPath(); ctx.arc(C + 28, 14, 4.2, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = "#ffd23f"; ctx.strokeStyle = "#8a5f00"; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.arc(C + 28, 21, 3.2, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    // pontinhos de neve na aba
+    ctx.fillStyle = "rgba(180,200,230,0.8)";
+    [-14, -4, 8, 17].forEach(dx => { ctx.beginPath(); ctx.arc(C + dx, 18.5, 1.2, 0, Math.PI * 2); ctx.fill(); });
   }
 
   // Corpo completo (tudo o que não muda por humor/braço): sombra, botas,
@@ -790,7 +783,7 @@ function makeBossTextures(scene){
       ctx.beginPath(); ctx.ellipse(C - 33, C + 4, 13, 18, -0.25, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
       ctx.save();
       ctx.clip();
-      ctx.strokeStyle = "rgba(57,214,255,0.75)"; ctx.lineWidth = 2;
+      ctx.strokeStyle = "rgba(255,210,63,0.75)"; ctx.lineWidth = 2;
       [-8, 0, 8].forEach(oy => {
         ctx.beginPath(); ctx.ellipse(C - 33, C + 4 + oy, 13, 5, -0.25, 0, Math.PI * 2); ctx.stroke();
       });
@@ -817,8 +810,10 @@ function makeBossTextures(scene){
       ctx.beginPath(); ctx.moveTo(C + 34, C - 14); ctx.quadraticCurveTo(C + 48, C - 34, C + 42, C - 52); ctx.stroke();
       ctx.strokeStyle = PH.trim; ctx.lineWidth = 1; ctx.lineCap = "butt";
       ctx.beginPath(); ctx.moveTo(C + 42, C - 52); ctx.quadraticCurveTo(C + 40, C - 24, C + 40, C - 2); ctx.stroke();
-      ctx.strokeStyle = PH.glow; ctx.lineWidth = 2; ctx.lineCap = "round";
-      ctx.beginPath(); ctx.moveTo(C + 40, C - 2); ctx.quadraticCurveTo(C + 46, C + 4, C + 42, C + 10); ctx.stroke();
+      ctx.lineCap = "round"; ctx.lineJoin = "round";
+      ctx.beginPath(); ctx.moveTo(C + 40, C - 2); ctx.lineTo(C + 40, C + 9); ctx.quadraticCurveTo(C + 40, C + 17, C + 47, C + 15);
+      ctx.strokeStyle = "#ffffff"; ctx.lineWidth = 5; ctx.stroke();
+      ctx.strokeStyle = "#e53935"; ctx.lineWidth = 5; ctx.setLineDash([3, 4]); ctx.stroke(); ctx.setLineDash([]);
     } else {
       ctx.strokeStyle = PH.cloakDark; ctx.lineWidth = 2.2;
       [-33, 33].forEach(dx => {
@@ -1002,13 +997,13 @@ function makeBossTextures(scene){
     bodyDark:  "#0e0e14",
     bodyMid:   "#1c1c26",
     bodyLight: "#33333f",
-    glow:      "#ff4030",
-    glow2:     "#ffb020",
+    glow:      "#ff7a1a",
+    glow2:     "#ffd23f",
     screenBg:  "#100608",
-    frame:     "#8a8a96",
-    frameDark: "#3c3c46",
+    frame:     "#6b5444",
+    frameDark: "#3b2c22",
     claw:      "#151018",
-    clawGlow:  "#ff4030",
+    clawGlow:  "#ff7a1a",
     virusBody: "#c7291f",
     virusDark: "#7a140e",
     panel:     "#18080a"
@@ -1038,7 +1033,7 @@ function makeBossTextures(scene){
     ctx.restore();
     ctx.strokeStyle = "#000"; ctx.lineWidth = 1.6;
     ctx.stroke();
-    ctx.strokeStyle = "rgba(255,64,48,0.55)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(255,122,26,0.55)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(len * 0.34, -width * 0.3); ctx.lineTo(len * 0.34, width * 0.3); ctx.stroke();
     ctx.restore();
   }
@@ -1075,13 +1070,12 @@ function makeBossTextures(scene){
     ctx.beginPath(); ctx.moveTo(x0, y0); ctx.quadraticCurveTo(x1, y1, x2, y2); ctx.stroke();
     ctx.restore();
     ctx.save();
-    ctx.translate(x2, y2);
-    ctx.rotate(Math.atan2(y2 - y1, x2 - x1));
-    ctx.fillStyle = "#5a5a66";
-    ctx.beginPath(); ctx.roundRect(-2, -5, 10, 10, 2); ctx.fill();
-    ctx.strokeStyle = "#000"; ctx.lineWidth = 1.2; ctx.stroke();
-    ctx.fillStyle = VG.glow;
-    ctx.fillRect(0, -2.5, 5, 5);
+    ctx.shadowColor = VG.glow; ctx.shadowBlur = 8;
+    ctx.fillStyle = VG.glow2;
+    ctx.beginPath(); ctx.arc(x2, y2, 4.6, 0, Math.PI * 2); ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath(); ctx.arc(x2 - 1, y2 - 1, 1.6, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
   }
 
@@ -1089,23 +1083,20 @@ function makeBossTextures(scene){
   // boss, no mesmo slot visual do chapéu de pirata (Monstro do Phishing) ou
   // do capuz (Espião das Sombras).
   function drawVirusCrown(ctx) {
-    const cx = C + 10, cy = 19, r = 10;
-    ctx.save();
-    for (let i = 0; i < 9; i++) {
-      const a = (Math.PI * 2 * i) / 9;
-      const x1 = cx + Math.cos(a) * r, y1 = cy + Math.sin(a) * r;
-      const x2 = cx + Math.cos(a) * (r + 6), y2 = cy + Math.sin(a) * (r + 6);
-      ctx.strokeStyle = VG.virusDark; ctx.lineWidth = 3.2; ctx.lineCap = "round";
-      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
-      ctx.fillStyle = VG.virusBody;
-      ctx.beginPath(); ctx.arc(x2, y2, 2.6, 0, Math.PI * 2); ctx.fill();
-    }
-    const grad = ctx.createRadialGradient(cx - 4, cy - 4, 2, cx, cy, r);
-    grad.addColorStop(0, "#ff8a70"); grad.addColorStop(0.5, VG.virusBody); grad.addColorStop(1, VG.virusDark);
-    ctx.fillStyle = grad;
-    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = "#000"; ctx.lineWidth = 1.6; ctx.stroke();
-    ctx.restore();
+    // coroa dourada com brasas — o Rei do Carvão
+    const g = ctx.createLinearGradient(0, 4, 0, 24);
+    g.addColorStop(0, "#ffe680"); g.addColorStop(1, "#c98a00");
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.moveTo(C - 19, 23); ctx.lineTo(C - 21, 7); ctx.lineTo(C - 10, 15); ctx.lineTo(C, 4);
+    ctx.lineTo(C + 10, 15); ctx.lineTo(C + 21, 7); ctx.lineTo(C + 19, 23); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#5a3b00"; ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.stroke();
+    ctx.fillStyle = "#7a140e"; ctx.fillRect(C - 19, 18, 38, 5);
+    [[C - 21, 7], [C, 4], [C + 21, 7]].forEach(([x, y]) => {
+      ctx.save(); ctx.shadowColor = VG.glow; ctx.shadowBlur = 6;
+      ctx.fillStyle = VG.glow; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
+      ctx.restore();
+    });
   }
 
   // Cabeça-ecrã — mesma moldura da família (Monstro do Phishing/Espião das
@@ -1120,7 +1111,7 @@ function makeBossTextures(scene){
     ctx.beginPath(); ctx.roundRect(C - 18, 26, 36, 24, 5); ctx.fill();
     ctx.save();
     ctx.shadowColor = VG.glow; ctx.shadowBlur = 9;
-    ctx.strokeStyle = "rgba(255,64,48,0.5)"; ctx.lineWidth = 1.2;
+    ctx.strokeStyle = "rgba(255,122,26,0.5)"; ctx.lineWidth = 1.2;
     ctx.stroke();
     ctx.restore();
     ctx.fillStyle = VG.glow2;
@@ -1149,17 +1140,11 @@ function makeBossTextures(scene){
     ctx.beginPath(); ctx.roundRect(C - 15, C + 2, 30, 20, 3); ctx.fill();
     ctx.strokeStyle = "#000"; ctx.lineWidth = 1.6; ctx.stroke();
     ctx.save();
-    ctx.shadowColor = VG.glow; ctx.shadowBlur = 4;
-    ctx.strokeStyle = VG.glow; ctx.lineWidth = 1.3;
-    [[-13, 12, -2, 7], [13, 12, 2, 7], [-13, 18, -3, 15], [13, 18, 3, 15]].forEach(([x1, y1, x2, y2]) => {
-      ctx.beginPath(); ctx.moveTo(C + x1, C + y1); ctx.lineTo(C + x2, C + y2); ctx.stroke();
-    });
+    ctx.shadowColor = VG.glow; ctx.shadowBlur = 5;
     ctx.fillStyle = VG.glow;
-    ctx.beginPath(); ctx.arc(C, C + 12, 3.6, 0, Math.PI * 2); ctx.fill();
-    [0, 1, 2, 3].forEach(i => {
-      const a = (Math.PI * 2 * i) / 4 + Math.PI / 4;
-      ctx.beginPath(); ctx.arc(C + Math.cos(a) * 3.6, C + 12 + Math.sin(a) * 3.6, 1, 0, Math.PI * 2); ctx.fill();
-    });
+    ctx.beginPath(); ctx.moveTo(C, C + 3); ctx.bezierCurveTo(C + 8, C + 10, C + 7, C + 19, C, C + 21); ctx.bezierCurveTo(C - 7, C + 19, C - 8, C + 10, C, C + 3); ctx.fill();
+    ctx.fillStyle = VG.glow2;
+    ctx.beginPath(); ctx.moveTo(C, C + 10); ctx.bezierCurveTo(C + 4, C + 14, C + 3, C + 19, C, C + 20); ctx.bezierCurveTo(C - 3, C + 19, C - 4, C + 14, C, C + 10); ctx.fill();
     ctx.restore();
   }
 
@@ -1359,20 +1344,20 @@ function makeBossTextures(scene){
   // tons roxo-magenta em vez de azul-ciano — reforça que são a mesma
   // "família visual" de bosses sem serem iguais.
   const SH = {
-    cloakDark:  "#120a26",
-    cloakMid:   "#241246",
-    cloakLight: "#402070",
-    glow:       "#ff4fe6",
-    glow2:      "#c86bff",
-    screenBg:   "#0c0718",
-    frame:      "#8a7aad",
-    frameDark:  "#4a3d6e",
-    belt:       "#2c2245",
-    buckle:     "#7a6a98",
-    claw:       "#1c0f38",
-    clawGlow:   "#ff4fe6",
-    hatDark:    "#0e0820",
-    panel:      "#180d30"
+    cloakDark:  "#0a1230",
+    cloakMid:   "#16265a",
+    cloakLight: "#2b4590",
+    glow:       "#7fd6ff",
+    glow2:      "#bfeaff",
+    screenBg:   "#07101e",
+    frame:      "#9fb4d8",
+    frameDark:  "#51668f",
+    belt:       "#1b2a52",
+    buckle:     "#8aa0c8",
+    claw:       "#0d1a40",
+    clawGlow:   "#7fd6ff",
+    hatDark:    "#08102a",
+    panel:      "#101c40"
   };
 
   // Uma "lâmina" da garra — mesma técnica do Monstro do Phishing
@@ -1401,7 +1386,7 @@ function makeBossTextures(scene){
     ctx.restore();
     ctx.strokeStyle = "#000"; ctx.lineWidth = 1.6;
     ctx.stroke();
-    ctx.strokeStyle = "rgba(255,79,230,0.55)"; ctx.lineWidth = 1;
+    ctx.strokeStyle = "rgba(127,214,255,0.55)"; ctx.lineWidth = 1;
     ctx.beginPath(); ctx.moveTo(len * 0.34, -width * 0.3); ctx.lineTo(len * 0.34, width * 0.3); ctx.stroke();
     ctx.restore();
   }
@@ -1453,7 +1438,7 @@ function makeBossTextures(scene){
     ctx.stroke();
     ctx.save();
     ctx.shadowColor = SH.glow2; ctx.shadowBlur = 7;
-    ctx.strokeStyle = "rgba(200,107,255,0.5)"; ctx.lineWidth = 1.3;
+    ctx.strokeStyle = "rgba(191,234,255,0.5)"; ctx.lineWidth = 1.3;
     ctx.stroke();
     ctx.restore();
 
@@ -1512,7 +1497,7 @@ function makeBossTextures(scene){
     ctx.beginPath(); ctx.roundRect(C - 18, 26, 36, 24, 5); ctx.fill();
     ctx.save();
     ctx.shadowColor = SH.glow; ctx.shadowBlur = 9;
-    ctx.strokeStyle = "rgba(255,79,230,0.5)"; ctx.lineWidth = 1.2;
+    ctx.strokeStyle = "rgba(127,214,255,0.5)"; ctx.lineWidth = 1.2;
     ctx.stroke();
     ctx.restore();
 
@@ -1557,19 +1542,20 @@ function makeBossTextures(scene){
     ctx.strokeStyle = "#000"; ctx.lineWidth = 2.4; ctx.stroke();
     ctx.save();
     ctx.shadowColor = SH.glow2; ctx.shadowBlur = 6;
-    ctx.strokeStyle = "rgba(200,107,255,0.5)"; ctx.lineWidth = 1.2;
+    ctx.strokeStyle = "rgba(191,234,255,0.5)"; ctx.lineWidth = 1.2;
     ctx.stroke();
     ctx.restore();
 
     ctx.save();
     ctx.shadowColor = SH.glow; ctx.shadowBlur = 6;
-    ctx.strokeStyle = SH.glow; ctx.lineWidth = 1.6; ctx.lineCap = "round";
-    ctx.beginPath();
-    ctx.moveTo(C - 9, 18); ctx.quadraticCurveTo(C, 12, C + 9, 18);
-    ctx.quadraticCurveTo(C, 22, C - 9, 18);
-    ctx.stroke();
-    ctx.fillStyle = SH.glow;
-    ctx.beginPath(); ctx.arc(C, 18, 2.2, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = SH.glow; ctx.lineWidth = 1.7; ctx.lineCap = "round";
+    for (let k = 0; k < 3; k++) {
+      const ang = k * Math.PI / 3;
+      const dx = Math.cos(ang) * 7, dy = Math.sin(ang) * 7;
+      ctx.beginPath(); ctx.moveTo(C - dx, 18 - dy); ctx.lineTo(C + dx, 18 + dy); ctx.stroke();
+    }
+    ctx.fillStyle = SH.glow2;
+    ctx.beginPath(); ctx.arc(C, 18, 1.8, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
   }
 
@@ -1759,15 +1745,14 @@ function makeBossTextures(scene){
     // envelopes de spam a transbordar da tampa — mais vívidos/coloridos e
     // maiores que antes (pedido: aproximar de uma ilustração de
     // referência), para ler como "a entupir" em vez de um sussurro pálido.
-    [[C-14,C-38,-0.3,"#e8352a"],[C-2,C-44,0.15,"#fffaff"],[C+10,C-39,-0.15,"#2c5aa0"],
-     [C+2,C-49,0.35,"#fffaff"],[C-10,C-50,-0.25,"#e8352a"]].forEach(([x,y,a,col])=>{
+    [[C-14,C-38,-0.3,"#2c9a4f","#ffd23f"],[C-2,C-44,0.15,"#e53935","#ffffff"],[C+10,C-39,-0.15,"#2c5aa0","#ffd23f"],
+     [C+2,C-49,0.35,"#ffd23f","#e53935"],[C-10,C-50,-0.25,"#ab47bc","#ffffff"]].forEach(([x,y,a,box,rib])=>{
       ctx.save(); ctx.translate(x,y); ctx.rotate(a);
-      ctx.fillStyle=col;
-      ctx.beginPath(); ctx.roundRect(-8,-6,16,11,1.5); ctx.fill();
+      ctx.fillStyle=box;
+      ctx.beginPath(); ctx.roundRect(-7,-6,14,12,1.5); ctx.fill();
       ctx.strokeStyle="#3a0a06"; ctx.lineWidth=1.2; ctx.stroke();
-      ctx.strokeStyle = col==="#fffaff" ? "#c7291f" : "rgba(255,255,255,0.85)";
-      ctx.lineWidth=1;
-      ctx.beginPath(); ctx.moveTo(-8,-6); ctx.lineTo(0,1.5); ctx.lineTo(8,-6); ctx.stroke();
+      ctx.fillStyle=rib;
+      ctx.fillRect(-1.5,-6,3,12); ctx.fillRect(-7,-1.5,14,3);
       ctx.restore();
     });
     // tampa da caixa de correio — maior e com uma aba interior mais escura
@@ -1780,7 +1765,7 @@ function makeBossTextures(scene){
     ctx.strokeStyle="#7a140e"; ctx.lineWidth=2; ctx.stroke();
     ctx.fillStyle="#8a1a12";
     ctx.beginPath(); ctx.moveTo(C-15,C-41); ctx.lineTo(C+15,C-41); ctx.lineTo(C+15,C-37); ctx.lineTo(C-15,C-37); ctx.closePath(); ctx.fill();
-    ctx.fillStyle="#fffaff";
+    ctx.fillStyle="#ffd23f";
     ctx.beginPath(); ctx.roundRect(C-8,C-37,16,7,1); ctx.fill();
     // fresta escura por baixo da tampa (a "boca" por onde sai o spam)
     ctx.fillStyle="#3a0a06"; ctx.fillRect(C-18,C-27,36,4);
@@ -1855,7 +1840,7 @@ function makeBossTextures(scene){
     ctx.save();
     rrPath(ctx,C-20,C+1.5,40,8,2); ctx.clip();
     ctx.fillStyle="#1c1a1a"; ctx.fillRect(C-20,C+1.5,40,8);
-    const envColors=["#e8352a","#fffaff","#2c5aa0","#fffaff","#e8352a","#2c5aa0"];
+    const envColors=["#2c9a4f","#ffd23f","#2c5aa0","#ffd23f","#2c9a4f","#2c5aa0"];
     envColors.forEach((col,i)=>{
       ctx.save();
       ctx.translate(C-17+i*7, C+5.5+((i%2)?1.5:-1));
@@ -2118,20 +2103,19 @@ function makeBossTextures(scene){
   // brilhar em ciano — a mesma "isca" que a cana de pesca segura — é a
   // metáfora óbvia de "morde o isco e é fisgado" que faltava.
   if(!scene.textures.exists("boss_proj_hook")){
+    // bengala doce lançada pelo Duende Trapaceiro
     const w=30,h=30,tex=scene.textures.createCanvas("boss_proj_hook",w,h), ctx=tex.getContext();
     ctx.save();
-    ctx.shadowColor="#39d6ff"; ctx.shadowBlur=6;
-    ctx.strokeStyle="#eef2f7"; ctx.lineWidth=3.4; ctx.lineCap="round";
-    ctx.beginPath();
-    ctx.moveTo(15,4);
-    ctx.lineTo(15,17);
-    ctx.arc(19,17,4,Math.PI,Math.PI*0.1,true);
-    ctx.stroke();
+    ctx.shadowColor="#ff6a6a"; ctx.shadowBlur=6;
+    ctx.lineCap="round"; ctx.lineJoin="round";
+    ctx.beginPath(); ctx.moveTo(11,26); ctx.lineTo(11,10); ctx.quadraticCurveTo(11,3,18,3); ctx.quadraticCurveTo(25,3,25,10);
+    ctx.strokeStyle="#ffffff"; ctx.lineWidth=7; ctx.stroke();
     ctx.restore();
-    ctx.strokeStyle="#8f9ab0"; ctx.lineWidth=1;
-    ctx.beginPath(); ctx.arc(15,5,2.6,0,Math.PI*2); ctx.stroke();
-    ctx.fillStyle="#182a56";
-    ctx.beginPath(); ctx.arc(15,5,1.3,0,Math.PI*2); ctx.fill();
+    ctx.lineCap="round"; ctx.lineJoin="round";
+    ctx.beginPath(); ctx.moveTo(11,26); ctx.lineTo(11,10); ctx.quadraticCurveTo(11,3,18,3); ctx.quadraticCurveTo(25,3,25,10);
+    ctx.strokeStyle="#e53935"; ctx.lineWidth=7; ctx.setLineDash([4,5]); ctx.stroke(); ctx.setLineDash([]);
+    ctx.beginPath(); ctx.moveTo(11,26); ctx.lineTo(11,10); ctx.quadraticCurveTo(11,3,18,3); ctx.quadraticCurveTo(25,3,25,10);
+    ctx.strokeStyle="rgba(120,20,20,0.55)"; ctx.lineWidth=1.2; ctx.stroke();
     tex.refresh();
   }
 
@@ -2140,25 +2124,22 @@ function makeBossTextures(scene){
   // tons neutros/claros para o setTint (orbTint em data-bosses.js) pintar
   // limpo por cima, tal como já acontecia com a bola ❓ original.
   if(!scene.textures.exists("boss_proj_germ")){
+    // pedaço de carvão em brasa lançado pelo Rei do Carvão (sem tint — ver orbTint em data-bosses.js)
     const w=30,h=30,tex=scene.textures.createCanvas("boss_proj_germ",w,h), ctx=tex.getContext();
-    const cx=w/2, cy=h/2, r=10;
-    // espigões curtos angulares à volta (fragmento de malware, não organismo)
-    ctx.strokeStyle="#ffd23f"; ctx.lineWidth=2.2;
-    for(let i=0;i<8;i++){
-      const a=(Math.PI*2*i)/8;
-      const x1=cx+Math.cos(a)*r, y1=cy+Math.sin(a)*r;
-      const x2=cx+Math.cos(a)*(r+4.5), y2=cy+Math.sin(a)*(r+4.5);
-      ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
-      ctx.beginPath(); ctx.arc(x2,y2,1.6,0,Math.PI*2); ctx.fillStyle="#ffd23f"; ctx.fill();
-    }
-    const gr=ctx.createRadialGradient(cx-3,cy-3,1,cx,cy,r);
-    gr.addColorStop(0,"#ffe8b0"); gr.addColorStop(0.6,"#a85a00"); gr.addColorStop(1,"#1c0d00");
-    ctx.fillStyle=gr;
-    ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fill();
-    // pequenos pixels de corrupção internos
-    ctx.fillStyle="rgba(64,224,255,0.55)";
-    ctx.beginPath(); ctx.arc(cx-3,cy+2,2.4,0,Math.PI*2); ctx.fill();
-    ctx.beginPath(); ctx.arc(cx+3,cy-3,1.8,0,Math.PI*2); ctx.fill();
+    const cx=w/2, cy=h/2;
+    const pts=[[-10,-3],[-6,-9],[1,-10],[8,-6],[10,1],[7,8],[-1,10],[-8,7]];
+    ctx.save();
+    ctx.shadowColor="#ff7a1a"; ctx.shadowBlur=7;
+    ctx.fillStyle="#2a2a30";
+    ctx.beginPath(); pts.forEach(([x,y],i)=>{ if(i===0) ctx.moveTo(cx+x,cy+y); else ctx.lineTo(cx+x,cy+y); }); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle="#0b0b0e"; ctx.lineWidth=1.6; ctx.lineJoin="round";
+    ctx.beginPath(); pts.forEach(([x,y],i)=>{ if(i===0) ctx.moveTo(cx+x,cy+y); else ctx.lineTo(cx+x,cy+y); }); ctx.closePath(); ctx.stroke();
+    ctx.strokeStyle="#ff7a1a"; ctx.lineWidth=1.5; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(cx-6,cy-1); ctx.lineTo(cx-1,cy+2); ctx.lineTo(cx+2,cy-3); ctx.lineTo(cx+7,cy); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(cx-2,cy+2); ctx.lineTo(cx-3,cy+7); ctx.stroke();
+    ctx.fillStyle="rgba(255,255,255,0.22)";
+    ctx.beginPath(); ctx.moveTo(cx-6,cy-7); ctx.lineTo(cx,cy-9); ctx.lineTo(cx-1,cy-5); ctx.closePath(); ctx.fill();
     tex.refresh();
   }
 
@@ -2201,29 +2182,23 @@ function makeBossTextures(scene){
   // troca a porca dourada (tema industrial genérico) por algo que se lê
   // de imediato como "correio indesejado a ser atirado".
   if(!scene.textures.exists("boss_proj_spam")){
+    // engrenagem solta, lançada pelo Robô Estraga-Prendas
     const w=32,h=24,tex=scene.textures.createCanvas("boss_proj_spam",w,h), ctx=tex.getContext();
-    ctx.shadowColor="rgba(220,40,30,0.6)"; ctx.shadowBlur=6;
-    // corpo do envelope
-    ctx.fillStyle="#fffaff";
-    ctx.beginPath(); ctx.roundRect(1,1,w-2,h-2,3); ctx.fill();
-    ctx.shadowBlur=0;
-    ctx.strokeStyle="#c7291f"; ctx.lineWidth=1.8; ctx.stroke();
-    // dobra em V
-    ctx.beginPath();
-    ctx.moveTo(1,1); ctx.lineTo(w/2,h*0.6); ctx.lineTo(w-1,1);
-    ctx.stroke();
-    // linhas finas de "texto" — só para dar textura de carta
-    ctx.strokeStyle="#e0b8b4"; ctx.lineWidth=1.2;
-    ctx.beginPath(); ctx.moveTo(5,h-6); ctx.lineTo(13,h-6); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(w-13,h-6); ctx.lineTo(w-5,h-6); ctx.stroke();
-    // selo de aviso — círculo vermelho com "!" branco, no canto
-    const bx=w-8, by=8, br=6.5;
-    ctx.fillStyle="#e8352a";
-    ctx.beginPath(); ctx.arc(bx,by,br,0,Math.PI*2); ctx.fill();
-    ctx.strokeStyle="#7a140e"; ctx.lineWidth=1.2; ctx.stroke();
-    ctx.fillStyle="#fffaff";
-    ctx.fillRect(bx-1,by-3.5,2,4.5);
-    ctx.beginPath(); ctx.arc(bx,by+3,1.1,0,Math.PI*2); ctx.fill();
+    const cx=w/2, cy=h/2;
+    ctx.save();
+    ctx.shadowColor="rgba(255,210,63,0.7)"; ctx.shadowBlur=6;
+    ctx.fillStyle="#c9a227";
+    for(let i=0;i<8;i++){
+      ctx.save(); ctx.translate(cx,cy); ctx.rotate((Math.PI*2*i)/8);
+      ctx.fillRect(-2.6,-11,5.2,5); ctx.restore();
+    }
+    ctx.beginPath(); ctx.arc(cx,cy,8.2,0,Math.PI*2); ctx.fill();
+    ctx.restore();
+    ctx.strokeStyle="#6b5410"; ctx.lineWidth=1.3;
+    ctx.beginPath(); ctx.arc(cx,cy,8.2,0,Math.PI*2); ctx.stroke();
+    ctx.fillStyle="#ffe680"; ctx.beginPath(); ctx.arc(cx-2,cy-2,3,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle="#38383e"; ctx.beginPath(); ctx.arc(cx,cy,3.4,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle="#e53935"; ctx.beginPath(); ctx.arc(cx,cy,1.4,0,Math.PI*2); ctx.fill();
     tex.refresh();
   }
 }
