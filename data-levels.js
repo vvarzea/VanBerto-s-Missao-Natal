@@ -682,7 +682,7 @@ export const LEVELS = [
     pipes:[
       {x:1920,y:317,toX:1970,toY:91},
       {x:1970,y:91,toX:1920,toY:317},
-      {x:3300,y:387,room:true,kind:"medalha",fact:"Sabias que em Portugal muita gente come 12 passas à meia-noite, uma por cada desejo?"},
+      {x:3300,y:387,room:true,kind:"medalha",fact:"Sabias que em Portugal muitas pessoas comem 12 passas à meia-noite, uma por cada desejo?"},
       // Túnel decorativo — perto do fim, no chão fixo, antes da porta,
       // afastado da plataforma em x:3300 (que fica logo por cima).
       {x:3480,y:474,decorative:true}

@@ -40,13 +40,13 @@ export const HISTORY = [
   { title: "👨‍👩‍👧 Tradições em Família", text: "O Natal é um tempo para estar com a família e com os amigos. Muitas famílias fazem a Consoada, trocam prendas e jogam juntos. Há também quem ajude os outros, com campanhas de recolha de alimentos e de brinquedos para quem precisa." },
   { title: "🌍 O Dia Mais Curto do Ano", text: "Por volta de 21 de dezembro acontece o solstício de inverno: é o dia mais curto e a noite mais longa do ano no hemisfério norte. As estações existem porque o eixo da Terra está inclinado. Quando é inverno em Portugal, na Austrália é verão!" },
   { title: "♻️ Embrulhos e Reciclagem", text: "No Natal produzimos muito lixo: papel de embrulho, caixas, garrafas e embalagens. Em Portugal, o ecoponto azul é para papel e cartão, o amarelo para plástico e metal e o verde para vidro. Reduzir, reutilizar e reciclar ajuda o planeta!" },
-  { title: "♿ Um Natal para Todos", text: "O Natal é de todos! As pessoas cegas leem com o sistema Braille, de pontos em relevo, e as pessoas surdas comunicam em Língua Gestual Portuguesa. Legendas, rampas e jogos adaptados ajudam a incluir toda a gente nas festas." },
+  { title: "♿ Um Natal para Todos", text: "O Natal é de todos! As pessoas cegas leem com o sistema Braille, de pontos em relevo, e as pessoas surdas comunicam em Língua Gestual Portuguesa. Legendas, rampas e jogos adaptados ajudam a incluir todos nas festas." },
   { title: "🛒 Compras de Natal", text: "Antes de comprar prendas, convém comparar preços, fazer um orçamento e guardar a fatura. Quando se compra na internet, na União Europeia, tens em regra 14 dias para devolver o produto sem dar explicações. Na Black Friday há muitas promoções, por isso compara sempre os preços!" },
   { title: "🎅 O Pai Natal e a Lapónia", text: "Na Finlândia, perto de Rovaniemi, fica a Aldeia do Pai Natal, mesmo em cima do Círculo Polar Ártico. Em finlandês, o Pai Natal chama-se Joulupukki. No inverno, a Lapónia tem noites polares e, com sorte, vê-se a aurora boreal no céu." },
   { title: "🎬 Filmes e Histórias de Natal", text: "O Natal também se vê no cinema e na televisão! «O Grinch» foi criado por Dr. Seuss em 1957, e «Sozinho em Casa» estreou em 1990. A rena Rudolfo nasceu num livro de 1939. Muitas famílias gostam de ver estes filmes juntas." },
   { title: "🎄 Enfeites de Natal", text: "A estrela-de-natal (ou poinsétia) vem do México, e as suas «pétalas» vermelhas são, na verdade, folhas modificadas! As bolas de vidro para a árvore surgiram na Alemanha, no século XIX. O abeto, o azevinho e o visco são plantas muito usadas nos enfeites de Natal." },
   { title: "💻 O Natal Tecnológico", text: "A 3 de dezembro de 1992, foi enviada a primeira mensagem SMS do mundo: dizia «Merry Christmas»! Hoje, os robôs aspiradores, as impressoras 3D e as videochamadas fazem parte de muitos Natais. Quem vive longe pode ver a família num ecrã, na noite de Natal." },
-  { title: "🎆 Passagem de Ano e Ano Novo", text: "Na noite de 31 de dezembro, em Portugal, muita gente come 12 passas à meia-noite, uma por cada desejo, e vê o fogo de artifício. O Funchal, na Madeira, é famoso pelo seu espetáculo. À meia-noite canta-se «Auld Lang Syne», uma canção da Escócia. E depois… começa um ano novo!" }
+  { title: "🎆 Passagem de Ano e Ano Novo", text: "Na noite de 31 de dezembro, em Portugal, muitas pessoas comem 12 passas à meia-noite, uma por cada desejo, e vê o fogo de artifício. O Funchal, na Madeira, é famoso pelo seu espetáculo. À meia-noite canta-se «Auld Lang Syne», uma canção da Escócia. E depois… começa um ano novo!" }
 ];
 
 export const QUIZ_TIPS = {
@@ -63,7 +63,7 @@ export const QUIZ_TIPS = {
   regras_familia: "O melhor do Natal é estar com quem gostamos, e ajudar quem precisa também faz parte da festa.",
   wifi_publico: "As estações existem por causa da inclinação do eixo da Terra, e não por a Terra estar mais perto ou mais longe do Sol.",
   copias_seguranca: "Azul para papel e cartão, amarelo para plástico e metal, verde para vidro. E, sempre que puderes, reutiliza!",
-  acessibilidade_digital: "Convidar toda a gente e adaptar os jogos faz com que o Natal seja uma festa de todos.",
+  acessibilidade_digital: "Convidar todos e adaptar os jogos faz com que o Natal seja uma festa de todos.",
   spam_compras: "Faz um orçamento, compara preços e guarda a fatura. Nas compras online tens 14 dias para devolver.",
   denuncia_conteudo: "Na Lapónia, no inverno, há a noite polar e a aurora boreal, uma luz colorida no céu.",
   identidade_digital: "Ver um filme de Natal em família é uma tradição, e há muitas histórias que passam de geração em geração.",
@@ -256,7 +256,7 @@ export const QUIZ_BY_THEME = {
     { q:"Quantos meses tem um ano?", a:[{t:"12",ok:true},{t:"10",ok:false},{t:"13",ok:false}], exp:"Um ano tem 12 meses." },
     { q:"Quantas passas se comem, em muitas casas portuguesas, à meia-noite?", a:[{t:"12",ok:true},{t:"7",ok:false},{t:"24",ok:false}], exp:"Come-se uma passa por cada badalada, e faz-se um desejo por cada uma." },
     { q:"Como se chama a noite de 31 de dezembro para 1 de janeiro?", a:[{t:"Passagem de ano",ok:true},{t:"Noite das Estrelas",ok:false},{t:"Noite de Verão",ok:false}], exp:"A passagem de ano é a noite em que o ano velho dá lugar ao ano novo." },
-    { q:"O que se faz no fim do ano para melhorar no seguinte?", a:[{t:"Pensar em desejos e bons propósitos",ok:true},{t:"Esquecer tudo",ok:false},{t:"Ficar zangado com toda a gente",ok:false}], exp:"Muitas pessoas fazem uma lista de bons propósitos para o ano novo." }
+    { q:"O que se faz no fim do ano para melhorar no seguinte?", a:[{t:"Pensar em desejos e bons propósitos",ok:true},{t:"Esquecer tudo",ok:false},{t:"Ficar zangado com os outros",ok:false}], exp:"Muitas pessoas fazem uma lista de bons propósitos para o ano novo." }
   ]
 };
 

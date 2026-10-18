@@ -7,11 +7,11 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { bossHitPlayer } from "./boss-combat.js?v=20261018natal10";
-import { showFloat } from "./feedback.js?v=20261018natal10";
-import { bossMiniViruses, bossState, bossTimers, inBossFight, invuln, itemsGroup, malwareGroup, platforms, player, sceneRef, set_bossMiniViruses, set_bossPopupAnchors } from "./state.js?v=20261018natal10";
-import { _drawHazard } from "./world.js?v=20261018natal10";
-import { ensureAudio, beep } from "../audio.js?v=20261018natal10";
+import { bossHitPlayer } from "./boss-combat.js?v=20261018natal11";
+import { showFloat } from "./feedback.js?v=20261018natal11";
+import { bossMiniViruses, bossState, bossTimers, inBossFight, invuln, itemsGroup, malwareGroup, platforms, player, sceneRef, set_bossMiniViruses, set_bossPopupAnchors } from "./state.js?v=20261018natal11";
+import { _drawHazard } from "./world.js?v=20261018natal11";
+import { ensureAudio, beep } from "../audio.js?v=20261018natal11";
 
 // ---- Arena contaminada (Vírus Gigante): zonas tóxicas + vírus pequenos ----
 // 100% aditivo e opt-in via def.contaminatedArena — não afeta bosses normais.

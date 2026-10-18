@@ -7,9 +7,9 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { btnStart } from "./dom.js?v=20261018natal10";
-import { score } from "./state.js?v=20261018natal10";
-import { loadNamespace, saveNamespace } from "../storage.js?v=20261018natal10";
+import { btnStart } from "./dom.js?v=20261018natal11";
+import { score } from "./state.js?v=20261018natal11";
+import { loadNamespace, saveNamespace } from "../storage.js?v=20261018natal11";
 
 // =====================================================
 // ===== ESTATÍSTICAS GLOBAIS — rastreio persistente =====

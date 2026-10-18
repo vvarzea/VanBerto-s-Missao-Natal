@@ -37,7 +37,7 @@ export const ARTEFACTS = [
   { emoji:"👨‍👩‍👧", name:"Mesa em Família", short:"Tradições em Família", color:"#60ffff", glow:"rgba(96,255,255,0.6)", vanberto:"O melhor do Natal é estar juntos!", set:2 },
   { emoji:"🌗", name:"Relógio do Solstício", short:"O Dia Mais Curto", color:"#ffc060", glow:"rgba(255,192,96,0.6)", vanberto:"Hoje é o dia mais curto do ano!", set:2 },
   { emoji:"♻️", name:"Laço Reciclado", short:"Embrulhos e Reciclagem", color:"#80c8ff", glow:"rgba(128,200,255,0.6)", vanberto:"Reduzir, reutilizar e reciclar!", set:2 },
-  { emoji:"♿", name:"Estrela para Todos", short:"Um Natal para Todos", color:"#ff6060", glow:"rgba(255,96,96,0.6)", vanberto:"O Natal é de toda a gente!", set:2 },
+  { emoji:"♿", name:"Estrela para Todos", short:"Um Natal para Todos", color:"#ff6060", glow:"rgba(255,96,96,0.6)", vanberto:"O Natal é de todos!", set:2 },
   { emoji:"🛒", name:"Cesto de Natal", short:"Compras de Natal", color:"#ffd080", glow:"rgba(255,208,128,0.6)", vanberto:"Compara preços e guarda a fatura!", set:2 },
   // idx 15-19 — Conjunto: Magia do Natal
   { emoji:"🎅", name:"Gorro do Pai Natal", short:"O Pai Natal e a Lapónia", color:"#c080ff", glow:"rgba(192,128,255,0.6)", vanberto:"Ho, ho, ho! Aurora boreal na Lapónia!", set:3 },
