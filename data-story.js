@@ -26,20 +26,10 @@ export const REGION_INTRO = {
 // diretamente: antes disto, os 4 textos tinham sempre "3 vezes" fixo, o que
 // ficava errado no modo Difícil (onde o boss aguenta 4 saltos).
 export const BOSS_OBJECTIVE = {
-  virus_gigante: "Desvia-te dos micróbios digitais 🦠 que o Vírus Gigante atira e salta-lhe em cima {N} vezes para o vencer!",
-  // CORRIGIDO — este texto ainda descrevia a bola "?" roxa genérica de
-  // antes do redesenho "pirata-hacker" (ver orbTexture:"boss_proj_hook" e
-  // hookDrift em data-bosses.js): o ataque deste boss já tinha passado a
-  // ser um anzol lançado na horizontal, mas o letreiro nunca foi atualizado.
-  monstro_phishing: "Desvia-te dos anzóis 🪝 que ele lança e salta-lhe em cima {N} vezes para o vencer!",
-  robo_spam: "Ele patrulha depressa a espalhar spam — apanha o ritmo e salta-lhe em cima {N} vezes para o vencer!",
-  // CORRIGIDO (pedido: "no nível do último boss faz isto, não quero nada
-  // disto") — este texto ainda descrevia o teletransporte antigo ("ele
-  // teleporta-se... assim que ele reaparecer"), que já foi removido (ver
-  // movementType em data-bosses.js: passou de "teleport" para "patrol",
-  // mais rápido que todos os outros 3, mas nunca desaparece do ecrã). O
-  // texto ficava a prometer um comportamento que já não existe.
-  espiao_sombras: "Ele anda muito depressa a atirar orbes sombrios 🔮! Salta-lhe em cima {N} vezes para o vencer!"
+  virus_gigante: "Desvia-te dos pedaços de carvão ⚫ que o Rei do Carvão atira e salta-lhe em cima {N} vezes para o vencer!",
+  monstro_phishing: "Desvia-te das bengalas doces 🍬 que o Duende Trapaceiro lança e salta-lhe em cima {N} vezes para o vencer!",
+  robo_spam: "Ele patrulha depressa a atirar engrenagens ⚙️ — apanha o ritmo e salta-lhe em cima {N} vezes para o vencer!",
+  espiao_sombras: "Ele anda muito depressa a atirar bolas de neve sombrias ❄️! Salta-lhe em cima {N} vezes para o vencer!"
 };
 
 // Diálogo de boss, por boss.
@@ -47,29 +37,29 @@ export const BOSS_OBJECTIVE = {
 // "rally"    = fala do VanBerto's DEPOIS da ameaça do boss, mesmo antes do combate começar.
 export const BOSS_INTRO_VB = {
   virus_gigante: {
-    reaction: "Ugh, sinto o sistema pesado... alguma coisa aqui não está nada bem.",
-    rally: "Vamos mostrar-lhe que cuidar dos dispositivos também é um ato de coragem!"
+    reaction: "Que calor de repente... e que cheiro a fumo!",
+    rally: "Vamos apagar-lhe as brasas e salvar as meias de Natal!"
   },
   monstro_phishing: {
-    reaction: "Sinto uma mensagem estranha... como se algo tentasse enganar-nos!",
-    rally: "Não vai resultar! Nunca vamos clicar em links suspeitos!"
+    reaction: "Ouço risinhos... alguém andou a trocar as prendas!",
+    rally: "Não vai resultar! Já não nos enganas, duende!"
   },
   robo_spam: {
-    reaction: "Cheira a spam no ar... isto não pode continuar assim!",
-    rally: "Vamos mostrar-lhe que uma caixa de correio limpa é sempre mais forte!"
+    reaction: "Ouço brinquedos a partir... isto não pode continuar assim!",
+    rally: "Vamos arranjar todos os brinquedos e salvar as prendas!"
   },
   espiao_sombras: {
-    reaction: "Está tudo tão escuro aqui dentro... como se alguém andasse a espiar-nos.",
-    rally: "As sombras não resistem quando protegemos a nossa privacidade juntos!"
+    reaction: "Está tudo tão escuro aqui dentro... as luzes de Natal estão a apagar-se!",
+    rally: "A luz do Natal vence sempre a escuridão do inverno! Vamos a isso!"
   }
 };
 
 // Uma única fala de vitória por boss, ligada à competência que acabou de ser recuperada.
 export const BOSS_VICTORY_VB = {
-  virus_gigante: "Conseguimos! O nosso dispositivo está limpo e protegido!",
-  monstro_phishing: "Vencemos! Agora sabemos sempre reconhecer um link suspeito!",
-  robo_spam: "A caixa de correio agradece! Chega de spam e burlas!",
-  espiao_sombras: "A nossa privacidade venceu as sombras! Os nossos dados estão seguros!"
+  virus_gigante: "Conseguimos! As brasas apagaram-se e as meias ficam com prendas!",
+  monstro_phishing: "Vencemos! Já não há partidas com as prendas!",
+  robo_spam: "Os brinquedos estão arranjados! Já pode haver Natal!",
+  espiao_sombras: "A luz do Natal venceu a escuridão! Está tudo a brilhar!"
 };
 
 // Frases curtas mostradas (sem parar o jogo, só um "floatie") sempre que se
@@ -85,24 +75,24 @@ export const KNOWLEDGE_FACTS = [
 // Falas curtas do boss em marcos de HP durante o combate.
 export const BOSS_HP_TAUNTS = {
   virus_gigante: {
-    atStart: ["Vou multiplicar-me sem parar!", "Não me consegues apanhar!", "Espalho-me por todos os ficheiros!"],
-    hp2: ["Argh! Isso picou...", "Não contava com esse salto!", "Ainda tenho força de sobra!"],
-    hp1: ["Não... o antivírus é forte demais!", "Isto não pode ser...", "Estou a ser eliminado!"]
+    atStart: ["Vou encher as meias de carvão!", "Não me consegues apanhar!", "Só há carvão debaixo desta árvore!"],
+    hp2: ["Argh! Isso queimou... a mim!", "Não contava com esse salto!", "Ainda tenho brasas de sobra!"],
+    hp1: ["Não... as minhas brasas estão a apagar-se!", "Isto não pode ser...", "Estou a arrefecer!"]
   },
   monstro_phishing: {
-    atStart: ["Vais clicar sem pensar!", "Ninguém escapa ao meu link!", "Achas mesmo que me vais vencer?"],
-    hp2: ["Isso foi sorte!", "Não contava com esse alerta...", "Grrr, tenta outra vez!"],
-    hp1: ["Não! Descobriram o meu disfarce!", "Isto não pode ser...", "A verdade... é mais forte!"]
+    atStart: ["Hi, hi, hi! Troquei as etiquetas!", "Ninguém escapa às minhas partidas!", "Achas que me vais apanhar?"],
+    hp2: ["Isso foi sorte!", "Não contava com esse salto...", "Grrr, tenta outra vez!"],
+    hp1: ["Não! Descobriram a minha partida!", "Isto não pode ser...", "A alegria... é mais forte!"]
   },
   robo_spam: {
-    atStart: ["Vou encher a tua caixa de correio ainda mais depressa!", "Não me apanhas, sou rápido demais!", "Spam para todo o lado!"],
-    hp2: ["Essa amolgou-me a chapa!", "Não contava com essa pancada!", "Ainda tenho muitas mensagens para enviar!"],
-    hp1: ["Não... estão todas a ser bloqueadas!", "Os meus circuitos... estão a falhar!", "Isto não pode ser!"]
+    atStart: ["Vou estragar todos os brinquedos!", "Não me apanhas, sou rápido demais!", "Peças soltas para todo o lado!"],
+    hp2: ["Essa amolgou-me a chapa!", "Não contava com essa pancada!", "Ainda tenho muitos brinquedos para estragar!"],
+    hp1: ["Não... estão todos a ser arranjados!", "Os meus circuitos... estão a falhar!", "Isto não pode ser!"]
   },
   espiao_sombras: {
-    atStart: ["As sombras vão esconder os teus dados!", "Nunca me vais apanhar no ar!", "Ninguém protege a tua privacidade aqui!"],
-    hp2: ["Impossível! Consegues ver-me na sombra?", "Isso não devia ter acontecido...", "Grrr, mais rápido da próxima vez!"],
-    hp1: ["Não... a tua privacidade está a vencer!", "As sombras... estão a desaparecer!", "Isto não pode ser o fim!"]
+    atStart: ["A noite vai ficar mais comprida!", "Nunca me vais apanhar no ar!", "Vou apagar as luzes do Natal!"],
+    hp2: ["Impossível! Consegues ver-me no escuro?", "Isso não devia ter acontecido...", "Grrr, mais rápido da próxima vez!"],
+    hp1: ["Não... a luz do Natal está a vencer!", "As sombras... estão a desaparecer!", "Isto não pode ser o fim!"]
   }
 };
 

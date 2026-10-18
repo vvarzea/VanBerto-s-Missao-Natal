@@ -50,7 +50,7 @@ export const HISTORY = [
 ];
 
 export const QUIZ_TIPS = {
-  historia_internet: "O Natal tem uma longa história: já os romanos trocavam presentes em dezembro, e a árvore de Natal nasceu na Alemanha.",
+  historia_internet: "O Natal tem uma longa história: já os romanos trocavam prendas em dezembro, e a árvore de Natal nasceu na Alemanha.",
   palavras_passe: "Prefere luzes LED, apaga-as quando saíres de casa e confirma que têm a marcação CE.",
   dados_pessoais: "Na Consoada o bacalhau é o prato mais típico, e as rabanadas, o bolo-rei e as filhós são os doces mais conhecidos.",
   instituicoes_apoio: "O Natal é uma festa de todos, e cada país tem os seus costumes, a sua comida e a sua forma de dizer «Feliz Natal».",
@@ -99,7 +99,7 @@ export const QUIZ_ARTICLE = {
 // Fácil — 3 opções por pergunta
 export const QUIZ_BY_THEME = {
   historia_internet: [
-    { q:"Que festa dos antigos romanos, em dezembro, tinha banquetes e troca de presentes?", a:[{t:"A Saturnália",ok:true},{t:"As Olimpíadas",ok:false},{t:"A Oktoberfest",ok:false}], exp:"Os romanos celebravam a Saturnália em dezembro, com banquetes, jogos e troca de pequenos presentes. É uma das festas de inverno que inspiraram tradições de hoje." },
+    { q:"Que festa dos antigos romanos, em dezembro, tinha banquetes e troca de prendas?", a:[{t:"A Saturnália",ok:true},{t:"As Olimpíadas",ok:false},{t:"A Oktoberfest",ok:false}], exp:"Os romanos celebravam a Saturnália em dezembro, com banquetes, jogos e troca de pequenas prendas. É uma das festas de inverno que inspiraram tradições de hoje." },
     { q:"Em que país europeu nasceu a tradição de enfeitar uma árvore dentro de casa no Natal?", a:[{t:"Na Alemanha",ok:true},{t:"No Egito",ok:false},{t:"No Japão",ok:false}], exp:"A tradição de levar uma árvore verde para casa e enfeitá-la nasceu na Alemanha e foi-se espalhando por toda a Europa e pelo mundo." },
     { q:"Em que dia se celebra o Natal?", a:[{t:"A 25 de dezembro",ok:true},{t:"A 1 de dezembro",ok:false},{t:"A 31 de dezembro",ok:false}], exp:"O Natal celebra-se a 25 de dezembro, e a noite anterior, 24 de dezembro, é a Consoada em Portugal." },
     { q:"Quem traz as prendas às crianças em muitos países, segundo a tradição?", a:[{t:"O Pai Natal",ok:true},{t:"O Pai Inverno",ok:false},{t:"O Pai Verão",ok:false}], exp:"Em Portugal chama-se Pai Natal. Noutros países tem outros nomes, mas a ideia é a mesma: trazer prendas na noite de Natal." },
@@ -232,7 +232,7 @@ export const QUIZ_BY_THEME = {
     { q:"Onde se veem muitos filmes de Natal em casa?", a:[{t:"Na televisão",ok:true},{t:"No frigorífico",ok:false},{t:"No forno",ok:false}], exp:"Muitas famílias veem filmes de Natal na televisão." },
     { q:"O que é um desenho animado?", a:[{t:"Um filme feito com desenhos",ok:true},{t:"Um livro de receitas",ok:false},{t:"Um tipo de bolo de Natal",ok:false}], exp:"Num desenho animado, as imagens parecem mexer-se." },
     { q:"O que é uma sequela?", a:[{t:"A continuação de um filme",ok:true},{t:"O primeiro capítulo",ok:false},{t:"Um tipo de sapato",ok:false}], exp:"Uma sequela conta o que acontece depois de um filme." },
-    { q:"O que se vê no fim de um filme, com os nomes de quem trabalhou nele?", a:[{t:"Os créditos",ok:true},{t:"O cartaz",ok:false},{t:"A pipoca",ok:false}], exp:"Os créditos mostram o nome de todos os que fizeram o filme." }
+    { q:"O que se vê no fim de um filme, com os nomes de quem trabalhou nele?", a:[{t:"Os créditos",ok:true},{t:"O cartaz",ok:false},{t:"As pipocas",ok:false}], exp:"Os créditos mostram o nome de todos os que fizeram o filme." }
   ],
   privacidade: [
     { q:"Como se chama a planta de folhas vermelhas muito usada como decoração de Natal?", a:[{t:"Estrela-de-natal",ok:true},{t:"Girassol",ok:false},{t:"Margarida",ok:false}], exp:"A estrela-de-natal, ou poinsétia, tem folhas vermelhas e é muito usada em dezembro." },

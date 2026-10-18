@@ -5,16 +5,16 @@
 // nível mudou, ver data-levels.js). Os 4 mundos e as posições dos bosses
 // mantêm-se exatamente iguais à estrutura original.
 export const MAP_REGIONS = [
-  { id:"origens",        icon:"🌐", name:"Reino das Tradições",         sub:"Origens, luzes, mesa de Natal, neve e o Vírus Gigante",      levels:[0,1,2,3,4],
+  { id:"origens",        icon:"🌐", name:"Reino das Tradições",         sub:"Origens, luzes, mesa de Natal, neve e o Rei do Carvão",      levels:[0,1,2,3,4],
     mapBg:"map-mundo1.webp",
     nodePos:[{x:22.7,y:85.0},{x:37.1,y:76.5},{x:52.6,y:68.0},{x:68.8,y:51.0},{x:85.5,y:20.2}] },
-  { id:"desenvolvimento",icon:"📡", name:"Vale das Prendas e da Música",    sub:"Prendas, espaço, cartões, música e o Monstro do Phishing",    levels:[5,6,7,8],
+  { id:"desenvolvimento",icon:"📡", name:"Vale das Prendas e da Música",    sub:"Prendas, espaço, cartões, música e o Duende Trapaceiro",    levels:[5,6,7,8],
     mapBg:"map-mundo2.webp",
     nodePos:[{x:25.0,y:53.0},{x:40.0,y:56.5},{x:53.0,y:58.5},{x:60.5,y:54.5}] },
-  { id:"protecao",       icon:"🛡️", name:"Fortaleza da Família", sub:"Matemática, família, reciclagem, compras e o Robô do Spam",  levels:[9,10,11,12,13,14],
+  { id:"protecao",       icon:"🛡️", name:"Fortaleza da Família", sub:"Matemática, família, reciclagem, compras e o Robô Estraga-Prendas",  levels:[9,10,11,12,13,14],
     mapBg:"map-mundo3.webp",
     nodePos:[{x:5.0,y:87.0},{x:14.5,y:76.0},{x:24.5,y:67.5},{x:22.5,y:57.0},{x:33.0,y:54.0},{x:40.0,y:49.5}] },
-  { id:"participacao",   icon:"🔒", name:"Cidade da Magia",  sub:"Pai Natal, filmes, enfeites, tecnologia e o Espião das Sombras",   levels:[15,16,17,18,19],
+  { id:"participacao",   icon:"🔒", name:"Cidade da Magia",  sub:"Pai Natal, filmes, enfeites, tecnologia e a Sombra do Inverno",   levels:[15,16,17,18,19],
     mapBg:"map-mundo4.webp",
     nodePos:[{x:5.0,y:78.0},{x:18.0,y:89.0},{x:35.0,y:82.0},{x:30.0,y:59.0},{x:50.0,y:53.0}] },
   { id:"base",           icon:"🏠", name:"Base do VanBerto's",            sub:"O teu ponto de partida",                           levels:[] },

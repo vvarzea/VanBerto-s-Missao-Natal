@@ -11,8 +11,8 @@ export const BOSSES = [
     id: "monstro_phishing",
     afterLevel: 8,           // Fecha o mundo "Vale da Comunicação Segura" (Níveis 6-9 —
                               // jogos seguros, pegada digital, fake news, phishing).
-    name: "Monstro do Phishing",
-    emoji: "👾",
+    name: "Duende Trapaceiro",
+    emoji: "🧝",
     // Cor alinhada com o redesenho "pirata-hacker" (ver makeBossTextures em
     // textures.js) — antes era roxo (0x8a5cff), a cor do blob antigo; agora
     // é o mesmo ciano da orla/olhos/brilho do novo boss. Usada no overlay
@@ -58,7 +58,7 @@ export const BOSSES = [
     // nenhum dos 4 bosses. Distintas das taunts curtas de BOSS_HP_TAUNTS
     // (data-story.js) — aquelas disparam a cada salto certeiro; estas só
     // nos 2 momentos de escalada de fúria (mais impacto: câmara+flash).
-    rageLines: { angry: "Achavas que era só um clique?!", desperate: "Não... a isca não pegou!" },
+    rageLines: { angry: "Achavas que eras mais esperto?!", desperate: "Não... a minha partida falhou!" },
     // Escalada própria na 1ª fúria (nova) — este boss passa a atirar em par
     // (ver doBossRollQmark em dia-crianca.js) já ao primeiro salto certeiro,
     // uma fúria mais cedo que os outros 3 "doubleThrowAtMaxRage" (só na 2ª).
@@ -75,7 +75,7 @@ export const BOSSES = [
     phishingDecoyAtMaxRage: true,
     // Rótulo temático do contador de saltos no HUD (nova) — antes os 4
     // bosses mostravam sempre "👣 Saltos: X/3", sem ligação ao tema.
-    stompLabel: "🎣 Mordidas",
+    stompLabel: "🎭 Partidas travadas",
     // Reforço do chefe — habilidade exclusiva do Extremo (nova, pedido:
     // "algo qualitativamente novo no Extremo, não só +HP/×1.4", em vez do
     // Extremo continuar a ser só o mesmo combate mais apertado). Ao chegar
@@ -127,8 +127,8 @@ export const BOSSES = [
     // arenas) e por isso têm o seu próprio signX explícito, cada um com o
     // centro da sua plataforma baixa esquerda.
     signX: 230,
-    intro: "Um clique... e caíste na minha rede! Até no Natal há anzóis!",
-    defeatLine: "Nãoo! Viste através do meu disfarce!",
+    intro: "Hi, hi, hi! Troquei as etiquetas de todas as prendas!",
+    defeatLine: "Nãoo! Descobriste a minha partida!",
     quizTheme: "phishing",
     hp: 3,
     // Tema próprio removido — os temas passaram a estar agrupados por
@@ -177,8 +177,8 @@ export const BOSSES = [
     id: "virus_gigante",
     afterLevel: 4,            // Fecha o mundo "Reino dos Fundamentos" (Níveis 1-5 — internet,
                                // palavras-passe, dados pessoais, instituições de apoio, vírus).
-    name: "Vírus Gigante",
-    emoji: "🦠",
+    name: "Rei do Carvão",
+    emoji: "👑",
     // Cor alinhada com o redesenho "robô-vírus" (ver makeBossTextures em
     // textures.js) — antes era rosa (0xe0409a), a cor da esfera antiga;
     // agora é o vermelho do brilho da cara/garras/tentáculos do novo boss.
@@ -205,10 +205,10 @@ export const BOSSES = [
     finalStandBurstHits: 2,
     // Falas próprias de fúria (nova) — ver comentário completo no Monstro
     // do Phishing.
-    rageLines: { angry: "Vou replicar-me outra vez!", desperate: "O antivírus... está a vencer!" },
+    rageLines: { angry: "Vou encher todas as meias de carvão!", desperate: "As minhas brasas... estão a apagar-se!" },
     // Rótulo temático do contador de saltos no HUD (nova, ver mesmo
     // comentário no Monstro do Phishing).
-    stompLabel: "🦠 Infeções travadas",
+    stompLabel: "🔥 Brasas apagadas",
     // Reforço do chefe no Extremo — ver comentário completo junto ao
     // Monstro do Phishing (data-bosses.js, boss monstro_phishing).
     extremoReinforcement: true,
@@ -233,7 +233,7 @@ export const BOSSES = [
     // a plataforma até ao fundo (ver o novo parâmetro de altura em
     // _drawHazard/spawnToxicZones, em dia-crianca.js).
     contaminatedArena: {
-      hazardType: "acid",
+      hazardType: "lava",
       zonesBase: [ {x:200,w:140}, {x:760,w:140} ],
       virusBase: 0,
       escalations: {
@@ -294,7 +294,7 @@ export const BOSSES = [
     chaserGermAtMaxRage: true,
     // orbTint: era rosa (0xe0409a, a condizer com a esfera antiga) — agora
     // vermelho, a condizer com o redesenho "robô-vírus".
-    orbTint: 0xff4030,
+    orbTint: 0xffffff,
     // bossY: recalculado com o redesenho "robô-vírus" (ver makeBossTextures
     // em textures.js) — a esfera antiga não tinha pernas (pixel mais baixo
     // a ~44px do centro); agora tem botas, tal como os outros 3 bosses, com
@@ -315,8 +315,8 @@ export const BOSSES = [
     // cálculo por omissão (playerStartX+80, que com o playerStartX agora em
     // 400 daria 480 e cairia no vão aberto entre as plataformas).
     signX: 200,
-    intro: "Vou infetar todos os teus ficheiros, até os das prendas de Natal!",
-    defeatLine: "Argh! O antivírus... venceu-me!",
+    intro: "Ha! Debaixo da árvore só vais encontrar carvão!",
+    defeatLine: "Argh! As minhas brasas... apagaram-se!",
     quizTheme: "virus_malware",
     hp: 3,                     // 4→3: agora são sempre 3 saltos na cabeça, como os outros bosses "stomp"
     // themeIdx próprio removido — ver comentário igual no boss do phishing.
@@ -357,8 +357,8 @@ export const BOSSES = [
                               // Digital" (Níveis 16-20) E o jogo inteiro. Ao ser derrotado,
                               // nextLevel() já não tem mais níveis a seguir (ver next>=LEVELS.length
                               // em goToNextLevel) e mostra o ecrã de vitória final.
-    name: "Espião das Sombras",
-    emoji: "🌑",
+    name: "Sombra do Inverno",
+    emoji: "🌨️",
     // Cor alinhada com o redesenho "feiticeiro-espião" (ver makeBossTextures
     // em textures.js, secção 3) — antes era um cinzento-arroxeado neutro
     // (0x3a3a5c) da capa lisa antiga; agora é o mesmo magenta do brilho da
@@ -395,7 +395,7 @@ export const BOSSES = [
     hopEvery: 2200,
     qmarkEvery: 1600,          // 2000→1600: pedido "demoram muito a atirar" (ver mesmo ajuste nos outros 2 bosses "normais", em monstro_phishing e robo_spam)
     orbTexture: "boss_proj_shadow", // orbe sombrio próprio — antes reutilizava a bola "?" do Monstro só retintada, sem sentido temático para um guardião das sombras
-    orbTint: 0x6a3fb5,
+    orbTint: 0x9fd0ff,
     // Personalidade do arremesso (ver doBossRollQmark em dia-crianca.js):
     // a orbe parte mais devagar que os outros 3, mas vai-se "puxando"
     // ligeiramente atrás do VanBerto's nos primeiros instantes de voo —
@@ -410,7 +410,7 @@ export const BOSSES = [
     finalStandBurst: true,
     // Falas próprias de fúria (nova) — ver comentário completo no Monstro
     // do Phishing (data-bosses.js, boss monstro_phishing).
-    rageLines: { angry: "As sombras ficam mais fundas!", desperate: "A tua privacidade... está a vencer-me!" },
+    rageLines: { angry: "A noite fica mais comprida!", desperate: "A luz do Natal... está a vencer-me!" },
     // extraTeleportOnRage removido (ver comentário completo junto a
     // movementType, acima) — dependia do teletransporte que fazia este
     // boss desaparecer; sem ele, a fúria só fica mais difícil pela
@@ -423,7 +423,7 @@ export const BOSSES = [
     // outros bosses "stomp" não têm nenhum efeito de ecrã na sua fúria.
     // Rótulo temático do contador de saltos no HUD (nova, ver mesmo
     // comentário no Monstro do Phishing).
-    stompLabel: "👁️ Exposições",
+    stompLabel: "🌨️ Luzes salvas",
     // Reforço do chefe no Extremo — ver comentário completo junto ao
     // Monstro do Phishing (data-bosses.js, boss monstro_phishing).
     extremoReinforcement: true,
@@ -444,8 +444,8 @@ export const BOSSES = [
     // abaixo) — mesma lógica dos outros bosses (ver comentário no Monstro
     // da Ignorância).
     signX: 220,
-    intro: "Nas sombras, ninguém vê os teus dados a desaparecer! Nem o Pai Natal!",
-    defeatLine: "A tua privacidade... venceu-me!",
+    intro: "Em dezembro as noites são longas... e eu apago todas as luzes!",
+    defeatLine: "A luz do Natal... venceu-me!",
     quizTheme: "direitos_digitais", // CORRIGIDO: estava "contacto_desconhecidos" (tema do
                               // Nível 19), por isso a pergunta do boss não coincidia com a
                               // pergunta que já tinha fechado o Nível 20 — pareciam duas
@@ -489,8 +489,8 @@ export const BOSSES = [
     id: "robo_spam",
     afterLevel: 14,          // Fecha o mundo "Fortaleza da Proteção Digital" (Níveis 10-15 —
                              // dispositivos, família, wi-fi, backups, acessibilidade, spam).
-    name: "Robô do Spam",
-    emoji: "📮",
+    name: "Robô Estraga-Prendas",
+    emoji: "🧸",
     color: 0xc7291f,
     // Mesma conversão para stompBoss — mantém a patrulha rápida (sensação
     // industrial) mas larga as plataformas móveis e a arena poluída, para
@@ -507,10 +507,10 @@ export const BOSSES = [
     finalStandBurst: true,
     // Falas próprias de fúria (nova) — ver comentário completo no Monstro
     // do Phishing.
-    rageLines: { angry: "Mais mensagens! Mais spam!", desperate: "Os meus circuitos... sobrecarregados!" },
+    rageLines: { angry: "Mais prendas para estragar!", desperate: "Os meus circuitos... estão a rebentar!" },
     // Rótulo temático do contador de saltos no HUD (nova, ver mesmo
     // comentário no Monstro do Phishing).
-    stompLabel: "📛 Bloqueios",
+    stompLabel: "🧸 Brinquedos arranjados",
     // Reforço do chefe no Extremo — ver comentário completo junto ao
     // Monstro do Phishing (data-bosses.js, boss monstro_phishing).
     extremoReinforcement: true,
@@ -591,8 +591,8 @@ export const BOSSES = [
     // abaixo) — mesma lógica dos outros bosses (ver comentário no Monstro
     // da Ignorância).
     signX: 200,
-    intro: "Vou encher a tua caixa de correio para sempre! Até de cartões de Natal falsos!",
-    defeatLine: "As minhas mensagens... foram todas bloqueadas!",
+    intro: "Vou desmontar todos os brinquedos! Até os que estão debaixo da árvore!",
+    defeatLine: "Os meus brinquedos... estão todos arranjados!",
     quizTheme: "spam_compras",
     hp: 3,                     // 5→3: agora são sempre 3 saltos na cabeça
     // themeIdx próprio removido — ver comentário igual no boss do phishing.

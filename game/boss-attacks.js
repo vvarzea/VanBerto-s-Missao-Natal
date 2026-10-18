@@ -7,11 +7,11 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { bossHitPlayer } from "./boss-combat.js?v=20261017natal8";
-import { showFloat } from "./feedback.js?v=20261017natal8";
-import { bossMiniViruses, bossState, bossTimers, inBossFight, invuln, itemsGroup, malwareGroup, platforms, player, sceneRef, set_bossMiniViruses, set_bossPopupAnchors } from "./state.js?v=20261017natal8";
-import { _drawHazard } from "./world.js?v=20261017natal8";
-import { ensureAudio, beep } from "../audio.js?v=20261017natal8";
+import { bossHitPlayer } from "./boss-combat.js?v=20261018natal10";
+import { showFloat } from "./feedback.js?v=20261018natal10";
+import { bossMiniViruses, bossState, bossTimers, inBossFight, invuln, itemsGroup, malwareGroup, platforms, player, sceneRef, set_bossMiniViruses, set_bossPopupAnchors } from "./state.js?v=20261018natal10";
+import { _drawHazard } from "./world.js?v=20261018natal10";
+import { ensureAudio, beep } from "../audio.js?v=20261018natal10";
 
 // ---- Arena contaminada (Vírus Gigante): zonas tóxicas + vírus pequenos ----
 // 100% aditivo e opt-in via def.contaminatedArena — não afeta bosses normais.
@@ -115,7 +115,7 @@ export function spawnMiniViruses(scene, count) {
   for (let i=0;i<count;i++){
     const x = 60 + Math.random()*(worldW-120);
     const v = malwareGroup.create(x, 320 + Math.random()*100, "vilao_round");
-    v.setScale(0.7).setTint(0x30c060).setData("isMiniHazard", true);
+    v.setScale(0.7).setTint(0xff7a1a).setData("isMiniHazard", true);
     v.body.setAllowGravity(false);
     v.setCollideWorldBounds(true); v.setBounce(1,1);
     const dirX = Math.random() < 0.5 ? -1 : 1, dirY = Math.random() < 0.5 ? -1 : 1;
@@ -183,9 +183,9 @@ function makePopupWindow(scene, x, y, w, h) {
   gfx.fillRoundedRect(x - w/2, y - h/2, w, 17);
   gfx.lineStyle(3, 0xff3030, 1);
   gfx.strokeRoundedRect(x - w/2, y - h/2, w, h, 6);
-  const label = scene.add.text(x, y - h/2 + 9, "📧 SPAM", { fontSize:"10px", fontStyle:"900", color:"#ffffff" }).setOrigin(0.5).setDepth(26);
+  const label = scene.add.text(x, y - h/2 + 9, "🎁 SURPRESA", { fontSize:"10px", fontStyle:"900", color:"#ffffff" }).setOrigin(0.5).setDepth(26);
   const closeX = scene.add.text(x + w/2 - 12, y - h/2 + 9, "✖", { fontSize:"12px", fontStyle:"900", color:"#ffffff" }).setOrigin(0.5).setDepth(26);
-  const body = scene.add.text(x, y + 8, "💰 OFERTA!\n👆 CLICA AQUI", { fontSize:"11px", fontStyle:"800", color:"#c72030", align:"center" }).setOrigin(0.5).setDepth(26);
+  const body = scene.add.text(x, y + 8, "💥 ESTRAGADA!\n⚠️ NÃO TOQUES", { fontSize:"11px", fontStyle:"800", color:"#c72030", align:"center" }).setOrigin(0.5).setDepth(26);
   return { gfx, label, closeX, body };
 }
 
@@ -556,7 +556,7 @@ function spawnPhishingDecoy(scene) {
   it.setDepth(2).setTint(0xffe066).setData("bossDecoy", true);
   scene.tweens.add({ targets: it, y: it.y - 8, duration: 520, yoyo: true, repeat: -1, ease: "Sine.easeInOut" });
   scene.tweens.add({ targets: it, angle: { from: -8, to: 8 }, duration: 420, yoyo: true, repeat: -1 });
-  const label = scene.add.text(x, y - 28, "🎣 GRÁTIS!", { fontSize: "12px", fontStyle: "900", color: "#ffcf40", stroke: "#5a2d00", strokeThickness: 4 }).setOrigin(0.5).setDepth(3);
+  const label = scene.add.text(x, y - 28, "⭐ GRÁTIS!", { fontSize: "12px", fontStyle: "900", color: "#ffcf40", stroke: "#5a2d00", strokeThickness: 4 }).setOrigin(0.5).setDepth(3);
   it.setData("decoyLabel", label);
   // Desaparece sozinha se não for tocada, para não acumular na arena.
   scene.time.delayedCall(3600, () => { if (it.active) { try{ label.destroy(); }catch{} it.destroy(); } });

@@ -2,7 +2,7 @@
 // PRAISE, PAUSE_TIPS, LEVEL_ENTRY_PHRASES, DYNAMIC_MSGS_CORRECT, DYNAMIC_MSGS_WRONG,
 // VB_LEVEL_INTRO, VB_HIT, VB_QUIZ_CORRECT, VB_QUIZ_WRONG, VB_STAR_POWER, VB_PERFECT_LEVEL
 
-export const PRAISE = ["🌟 Excelente!", "🛡️ Muito bem!", "🔐 Boa resposta!", "🎉 Fantástico!", "✨ Brilhante!", "🏆 Continua assim!", "🎄 Ho ho ho! Muito bem!", "🎁 Resposta digna de presente!", "❄️ Gelado de tão bom!"];
+export const PRAISE = ["🌟 Excelente!", "🛡️ Muito bem!", "🔐 Boa resposta!", "🎉 Fantástico!", "✨ Brilhante!", "🏆 Continua assim!", "🎄 Ho ho ho! Muito bem!", "🎁 Resposta digna de uma prenda!", "❄️ Gelado de tão bom!"];
 
 // PAUSE_TIPS são sobre MECÂNICAS de jogo (agachar, super-salto, power-ups,
 // tipos de vilão), não sobre o tema — mantidos tal como no original.
