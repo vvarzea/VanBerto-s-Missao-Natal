@@ -60,14 +60,14 @@ function frame(t) {
   if (t - last < 33) return;                   // ~30 imagens/s chegam (poupa o computador)
   const dt = Math.min(0.1, (t - last) / 1000 || 0.033); last = t;
   ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = "#fff";
+  ctx.fillStyle = "#fff"; ctx.strokeStyle = "#5b9bdc"; ctx.lineWidth = 1;   // contorno azul-gelo: visível sobre o fundo creme
   for (const f of flakes) {
     f.y += f.v * dt; f.a += f.s * dt;
     f.x += Math.sin(f.a) * 14 * dt;
     if (f.y - f.r > H) { f.y = -f.r; f.x = Math.random() * W; }
     if (f.x < -4) f.x = W + 4; else if (f.x > W + 4) f.x = -4;
     ctx.globalAlpha = f.o;
-    ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
   }
   ctx.globalAlpha = 1;
 }

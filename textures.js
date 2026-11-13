@@ -1,3 +1,4 @@
+import { buildBossArt } from "./game/boss-art.js?v=20261113natal13";
 // ===== Geração de texturas Phaser/canvas — VanBerto's =====
 // Extraído de dia-crianca.js. Ficheiro 100% autocontido: cada função só
 // depende do parâmetro `scene` (instância Phaser) e de constantes locais.
@@ -89,6 +90,7 @@ export function makeTextures(scene){
   makeVilaosTextures(scene);
   makeBossTextures(scene);
   natalBossHats(scene); // NATAL
+  buildBossArt(scene); // imagens dos bosses (ver game/boss-art.js)
   makeSparkTexture(scene);
   makeItemTextures(scene);
   makeVanBertoTexture(scene,"vanberto_open",false,-1);
@@ -1083,7 +1085,7 @@ function makeBossTextures(scene){
   // boss, no mesmo slot visual do chapéu de pirata (Monstro do Phishing) ou
   // do capuz (Espião das Sombras).
   function drawVirusCrown(ctx) {
-    // coroa dourada com brasas — o Rei do Carvão
+    // coroa dourada com brasas — desenho de reserva do boss do mundo 1
     const g = ctx.createLinearGradient(0, 4, 0, 24);
     g.addColorStop(0, "#ffe680"); g.addColorStop(1, "#c98a00");
     ctx.fillStyle = g;
@@ -2124,7 +2126,7 @@ function makeBossTextures(scene){
   // tons neutros/claros para o setTint (orbTint em data-bosses.js) pintar
   // limpo por cima, tal como já acontecia com a bola ❓ original.
   if(!scene.textures.exists("boss_proj_germ")){
-    // pedaço de carvão em brasa lançado pelo Rei do Carvão (sem tint — ver orbTint em data-bosses.js)
+    // pedaço de carvão em brasa lançado pelo Pai Natal Malvado (sem tint — ver orbTint em data-bosses.js)
     const w=30,h=30,tex=scene.textures.createCanvas("boss_proj_germ",w,h), ctx=tex.getContext();
     const cx=w/2, cy=h/2;
     const pts=[[-10,-3],[-6,-9],[1,-10],[8,-6],[10,1],[7,8],[-1,10],[-8,7]];
@@ -2182,7 +2184,7 @@ function makeBossTextures(scene){
   // troca a porca dourada (tema industrial genérico) por algo que se lê
   // de imediato como "correio indesejado a ser atirado".
   if(!scene.textures.exists("boss_proj_spam")){
-    // engrenagem solta, lançada pelo Robô Estraga-Prendas
+    // engrenagem solta (desenho de reserva do boss do mundo 3)
     const w=32,h=24,tex=scene.textures.createCanvas("boss_proj_spam",w,h), ctx=tex.getContext();
     const cx=w/2, cy=h/2;
     ctx.save();

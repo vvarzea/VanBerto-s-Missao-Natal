@@ -10,6 +10,11 @@
 >   novas sobre burlas de Natal nas salas secretas (`fact:` em `data-levels.js`).
 > - Ícones da aplicação (instalar no ecrã, separador do navegador) com gorro de Pai Natal.
 > - Textos festivos: chegada a cada mundo, falas de entrada dos 4 bosses, «Boas Festas» no ecrã de vitória e no certificado.
+> - **natal13 — estética e obstáculos da «Missão Internet Segura»:** visual claro (fundo creme com pontinhos de Natal,
+>   cartões brancos com contorno marinho e sombra dura, botões e HUD no mesmo estilo; neve com contorno azul-gelo para se ver
+>   sobre o fundo claro). Obstáculos novos em `game/blocks.js`: gelo fino que cai, fio de luzinhas intermitente, vento gelado,
+>   presentes «?» e blocos de gelo (cabeçadas; o 🛡️ escudo parte o gelo) e flocos ❄️ (100 = +1 vida). **Bosses novos**
+>   (`game/boss-art.js` + `boss-*.png`): Pai Natal Malvado, Duende Trapaceiro, Homem de Gengibre Gigante e Boneco de Neve Furioso.
 > - O progresso e a cache offline têm nomes próprios (`vanbertos_ciberseguranca_natal_save_v1`, `natal-vanbertos-…`),
 >   por isso nunca se misturam com os do jogo normal.
 
@@ -24,10 +29,10 @@ Sem *build step*: os ficheiros publicam-se tal como estão (GitHub Pages).
 
   | Mundo | Níveis | Boss |
   | --- | --- | --- |
-  | Reino dos Fundamentos | 1–5 | Vírus Gigante |
-  | Vale da Comunicação Segura | 6–9 | Monstro do Phishing |
-  | Fortaleza da Proteção Digital | 10–15 | Robô do Spam |
-  | Cidade da Identidade Digital | 16–20 | Espião das Sombras |
+  | Reino das Tradições | 1–5 | Pai Natal Malvado |
+  | Vale das Prendas e da Música | 6–9 | Duende Trapaceiro |
+  | Fortaleza da Família | 10–15 | Homem de Gengibre Gigante |
+  | Cidade da Magia | 16–20 | Boneco de Neve Furioso |
 
 - **Quiz** no fim de cada nível (e outro depois de vencer cada boss). Estrelas por nível (até 3),
   artefactos, conquistas, mapa da aventura e certificado.
@@ -57,7 +62,7 @@ Sem *build step*: os ficheiros publicam-se tal como estão (GitHub Pages).
 | `fonts/` | Baloo 2 (400, 600, 700, 800) e Nunito (400, 600, 700 e 400 itálico), `woff2` latino, com as licenças OFL |
 | `phaser.min.js` | Phaser **3.90.0** minificado, servido localmente (sem CDN) |
 | `sw.js` | Service worker: modo offline (guarda o jogo na 1.ª visita; uma cache por versão) |
-| `game/` | Motor do jogo, dividido em 24 módulos (física, níveis, bosses, quiz, UI, guardar/continuar — ver «Estrutura do código») |
+| `game/` | Motor do jogo, dividido em 26 módulos (física, níveis, bosses, quiz, UI, guardar/continuar — ver «Estrutura do código») |
 | `LICENSE-Phaser.txt` | Licença MIT do Phaser (obrigatória ao distribuir o `phaser.min.js`) |
 | `_dev/` | Ferramentas de desenvolvimento (verificações, teste no Chromium, script de lançamento, conversor de fundos) e os JPG originais dos fundos (`_dev/originais/`). Não são necessárias no site publicado |
 | `data-quiz.js` | Perguntas — `QUIZ_BY_THEME` (Fácil, 185 perguntas, 3 opções) e `QUIZ_BY_THEME_AVANCADO` (Difícil e Extremo, 166 perguntas, 4 opções) —, curiosidades e artigos |
@@ -79,7 +84,7 @@ Sem *build step*: os ficheiros publicam-se tal como estão (GitHub Pages).
 
 ## Estrutura do código
 
-O motor do jogo (antes um único `dia-crianca.js` com ~10 300 linhas) está dividido em 24 módulos ES em `game/`,
+O motor do jogo (antes um único `dia-crianca.js` com ~10 300 linhas) está dividido em 26 módulos ES em `game/`,
 por assunto — a lista completa está no topo de `_dev/split_source.mjs`. Guia rápido:
 
 | Módulo | Conteúdo |
@@ -88,6 +93,8 @@ por assunto — a lista completa está no topo de `_dev/split_source.mjs`. Guia 
 | `game/scene.js` | Configuração e ciclo do Phaser (`preload`, `create`, `update`) |
 | `game/level.js`, `game/world.js`, `game/rooms.js`, `game/door.js` | Um nível: HUD, objetos do cenário, agachar/canos/salas secretas, porta e transição |
 | `game/boss-core.js`, `game/boss-attacks.js`, `game/boss-combat.js`, `game/boss-end.js` | Os 4 combates de boss, por assunto (arranque/arena, ataques, dano/derrota, vitória) |
+| `game/blocks.js` | Obstáculos e surpresas de cada nível (gelo fino, luzes, vento, presentes «?», blocos de gelo, flocos ❄️), gerados no fim de `loadLevel()` |
+| `game/boss-art.js` | Imagens dos 4 bosses (`boss-*.png`, recortadas) e os projéteis do Gengibre e do Boneco de Neve; se uma imagem faltar fica o desenho antigo |
 | `game/quiz.js` | Quiz do fim de nível, revisão espaçada dos erros e «Sabias que…?» |
 | `game/map.js`, `game/artefacts.js`, `game/screens.js` | Mapa da aventura, artefactos/Álbum/Galeria, e os ecrãs de Conquistas/Estatísticas/Opções/Certificado |
 | `game/items.js`, `game/flow.js`, `game/overlays.js`, `game/ui.js` | Itens/poderes, avançar de nível e fim de jogo, gestão de ecrãs sobrepostos, botões e atalhos |
@@ -127,7 +134,7 @@ e abrir <http://localhost:8000>.
 ## Versões e cache
 
 Todos os ficheiros carregados pelo `index.html` e todos os `import` internos levam **a mesma**
-string `?v=…` (atualmente `20261030natal12`). Tem de ser sempre igual em todo o lado: o mesmo módulo
+string `?v=…` (atualmente `20261113natal13`). Tem de ser sempre igual em todo o lado: o mesmo módulo
 importado com strings diferentes é carregado duas vezes, como duas instâncias separadas, e os
 browsers que já têm o jogo podem ficar com uma mistura de ficheiros velhos e novos.
 
