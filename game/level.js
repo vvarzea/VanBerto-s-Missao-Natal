@@ -7,21 +7,22 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { createArtOrbs } from "./artefacts.js?v=20261030natal12";
-import { clearBossArenaDecor } from "./boss-core.js?v=20261030natal12";
-import { tryOpenDoor } from "./door.js?v=20261030natal12";
-import { showFloat } from "./feedback.js?v=20261030natal12";
-import { clearDoubleJump, clearPower, clearStarPower } from "./items.js?v=20261030natal12";
-import { applyBackground, bgKeyForLevel, prefetchBackgrounds } from "./map.js?v=20261030natal12";
-import { saveGame } from "./overlays.js?v=20261030natal12";
-import { setCrouchHitbox, snapPlayerToGround } from "./rooms.js?v=20261030natal12";
-import { _doorWatchdogTimer, _landingCheckTimer, awaitingQuiz, bossExtremoAllies, bossState, bossTimers, currentLevel, currentLevelTip, decorativePipes, difficulty, door, doorOverlap, enemyTimers, getDifficulty, getMaxLives, getVillainJumpIntervalMult, getVillainSpeedMult, heartsGfx, hudText, invuln, isItemVisibleInDificil, isReducibleItemKind, isStarAllowedExtremo, itemCountText, itemsCollected, itemsGroup, itemsTotal, lives, malwareGroup, pipeExitDecor, pipes, platforms, player, playerName, playerNameHUD, powerHaloGfx, powerIndicator, powered, progressFill, resetPipeWarpState, score, scoreText, set__doorAnimRunning, set__doorWatchdogTimer, set__hudDirty, set__landingCheckTimer, set__pendingEntranceReveal, set_awaitingQuiz, set_bossExtremoAllies, set_bossTimers, set_collectedItemIndices, set_collectedRoomPipes, set_controlsInvertedUntil, set_currentLevel, set_currentLevelTip, set_decorativePipes, set_door, set_doorOverlap, set_enemyTimers, set_extraShieldCounted, set_inSecretRoom, set_invuln, set_isCrouching, set_itemsCollected, set_itemsTotal, set_livesLostThisLevel, set_pipeExitDecor, set_pipes, set_secretRoomHidden, set_secretRoomReturn, set_secretRoomTemp, shadowGfx, tipText, touch } from "./state.js?v=20261030natal12";
-import { clearHazards, clearMovingPlatforms, clearPipeHintSign, clearSecretSigns, clearSecrets, clearTrampolines, difficultyFactor, spawnBalloons, spawnCritters, spawnHazards, spawnLevelSign, spawnMovingPlatforms, spawnPipeHintSign, spawnSecrets, spawnShields, spawnTrampolines } from "./world.js?v=20261030natal12";
-import { LEVELS, THEMES } from "../data-levels.js?v=20261030natal12";
-import { resetLevelStarTracking } from "../stars.js?v=20261030natal12";
-import { makePlatformTextureThemed, makePipeTexture } from "../textures.js?v=20261030natal12";
-import { spawnPlatformDecor, resetDoorGlow } from "../background.js?v=20261030natal12";
-import { ensureAudio, SFX, beep } from "../audio.js?v=20261030natal12";
+import { createArtOrbs } from "./artefacts.js?v=20261113natal13";
+import { addBlocksAndPlatforms } from "./blocks.js?v=20261113natal13";
+import { clearBossArenaDecor } from "./boss-core.js?v=20261113natal13";
+import { tryOpenDoor } from "./door.js?v=20261113natal13";
+import { showFloat } from "./feedback.js?v=20261113natal13";
+import { clearDoubleJump, clearPower, clearStarPower } from "./items.js?v=20261113natal13";
+import { applyBackground, bgKeyForLevel, prefetchBackgrounds } from "./map.js?v=20261113natal13";
+import { saveGame } from "./overlays.js?v=20261113natal13";
+import { setCrouchHitbox, snapPlayerToGround } from "./rooms.js?v=20261113natal13";
+import { _doorWatchdogTimer, _landingCheckTimer, awaitingQuiz, bossExtremoAllies, bossState, bossTimers, currentLevel, currentLevelTip, decorativePipes, difficulty, door, doorOverlap, enemyTimers, getDifficulty, getMaxLives, getVillainJumpIntervalMult, getVillainSpeedMult, heartsGfx, hudText, invuln, isItemVisibleInDificil, isReducibleItemKind, isStarAllowedExtremo, itemCountText, itemsCollected, itemsGroup, itemsTotal, lives, malwareGroup, pipeExitDecor, pipes, platforms, player, playerName, playerNameHUD, powerHaloGfx, powerIndicator, powered, progressFill, resetPipeWarpState, score, scoreText, set__doorAnimRunning, set__doorWatchdogTimer, set__hudDirty, set__landingCheckTimer, set__pendingEntranceReveal, set_awaitingQuiz, set_bossExtremoAllies, set_bossTimers, set_collectedItemIndices, set_collectedRoomPipes, set_controlsInvertedUntil, set_currentLevel, set_currentLevelTip, set_decorativePipes, set_door, set_doorOverlap, set_enemyTimers, set_extraShieldCounted, set_inSecretRoom, set_invuln, set_isCrouching, set_itemsCollected, set_itemsTotal, set_livesLostThisLevel, set_pipeExitDecor, set_pipes, set_secretRoomHidden, set_secretRoomReturn, set_secretRoomTemp, shadowGfx, tipText, touch } from "./state.js?v=20261113natal13";
+import { clearHazards, clearMovingPlatforms, clearPipeHintSign, clearSecretSigns, clearSecrets, clearTrampolines, difficultyFactor, spawnBalloons, spawnCritters, spawnHazards, spawnLevelSign, spawnMovingPlatforms, spawnPipeHintSign, spawnSecrets, spawnShields, spawnTrampolines } from "./world.js?v=20261113natal13";
+import { LEVELS, THEMES } from "../data-levels.js?v=20261113natal13";
+import { resetLevelStarTracking } from "../stars.js?v=20261113natal13";
+import { makePlatformTextureThemed, makePipeTexture } from "../textures.js?v=20261113natal13";
+import { spawnPlatformDecor, resetDoorGlow } from "../background.js?v=20261113natal13";
+import { ensureAudio, SFX, beep } from "../audio.js?v=20261113natal13";
 
 // ===== Carregar nível =====
 
@@ -454,6 +455,7 @@ export function loadLevel(scene,idx){
     "🎆 Último nível — Feliz Ano Novo!"
   ];  set_currentLevelTip( (TIPS[currentLevel] || TIPS[0]) + (currentLevel >= 6 ? " ⚠️ Cuidado!" : ""));
   tipText.setText(currentLevelTip);
+  addBlocksAndPlatforms(scene, L, currentLevel); // presentes "?", gelo, luzes, vento e flocos (cabeçadas)
   ensureAudio(); SFX.door(); saveGame();
 }
 
@@ -715,7 +717,7 @@ export function updateProgressBar(L) {
     const segStart=BAR_X+Math.round(BAR_W*levelPct);
     const segEnd=BAR_X+Math.round(BAR_W*levelNextPct);
     const segW=segEnd-segStart;
-    progressFill.fillStyle(0xff6b35,0.9);
+    progressFill.fillStyle(0xe53935,0.9);
     progressFill.fillRoundedRect(segStart,BAR_Y,Math.max(3,Math.round(segW*inLevelPct)),BAR_H,5);
     const markerX=segStart+Math.round(segW*inLevelPct);
     progressFill.fillStyle(0x200040,1); progressFill.fillCircle(markerX,BAR_Y+BAR_H/2,6);

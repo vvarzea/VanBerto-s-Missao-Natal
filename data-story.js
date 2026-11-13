@@ -26,10 +26,10 @@ export const REGION_INTRO = {
 // diretamente: antes disto, os 4 textos tinham sempre "3 vezes" fixo, o que
 // ficava errado no modo Difícil (onde o boss aguenta 4 saltos).
 export const BOSS_OBJECTIVE = {
-  virus_gigante: "Desvia-te dos pedaços de carvão ⚫ que o Rei do Carvão atira e salta-lhe em cima {N} vezes para o vencer!",
+  virus_gigante: "Desvia-te dos pedaços de carvão ⚫ que o Pai Natal Malvado atira e salta-lhe em cima {N} vezes para o vencer!",
   monstro_phishing: "Desvia-te das bengalas doces 🍬 que o Duende Trapaceiro lança e salta-lhe em cima {N} vezes para o vencer!",
-  robo_spam: "Ele patrulha depressa a atirar engrenagens ⚙️ — apanha o ritmo e salta-lhe em cima {N} vezes para o vencer!",
-  espiao_sombras: "Ele anda muito depressa a atirar bolas de neve sombrias ❄️! Salta-lhe em cima {N} vezes para o vencer!"
+  robo_spam: "Ele patrulha depressa a atirar bolachas de gengibre 🍪 — apanha o ritmo e salta-lhe em cima {N} vezes para o vencer!",
+  espiao_sombras: "Ele anda muito depressa a atirar bolas de neve ❄️! Salta-lhe em cima {N} vezes para o vencer!"
 };
 
 // Diálogo de boss, por boss.
@@ -37,29 +37,29 @@ export const BOSS_OBJECTIVE = {
 // "rally"    = fala do VanBerto's DEPOIS da ameaça do boss, mesmo antes do combate começar.
 export const BOSS_INTRO_VB = {
   virus_gigante: {
-    reaction: "Que calor de repente... e que cheiro a fumo!",
-    rally: "Vamos apagar-lhe as brasas e salvar as meias de Natal!"
+    reaction: "Ho, ho, ho... mas este riso não é nada simpático!",
+    rally: "Vamos salvar as meias de Natal e devolver-lhe o bom humor!"
   },
   monstro_phishing: {
     reaction: "Ouço risinhos... alguém andou a trocar as prendas!",
     rally: "Não vai resultar! Já não nos enganas, duende!"
   },
   robo_spam: {
-    reaction: "Ouço brinquedos a partir... isto não pode continuar assim!",
-    rally: "Vamos arranjar todos os brinquedos e salvar as prendas!"
+    reaction: "Que cheirinho a bolachas... mas ouço prendas a ser esmigalhadas!",
+    rally: "Vamos salvar as prendas antes que ele as esmigalhe!"
   },
   espiao_sombras: {
-    reaction: "Está tudo tão escuro aqui dentro... as luzes de Natal estão a apagar-se!",
-    rally: "A luz do Natal vence sempre a escuridão do inverno! Vamos a isso!"
+    reaction: "Está tudo tão frio aqui dentro... as luzes de Natal estão a apagar-se!",
+    rally: "A luz do Natal vence sempre o frio do inverno! Vamos a isso!"
   }
 };
 
 // Uma única fala de vitória por boss, ligada à competência que acabou de ser recuperada.
 export const BOSS_VICTORY_VB = {
-  virus_gigante: "Conseguimos! As brasas apagaram-se e as meias ficam com prendas!",
+  virus_gigante: "Conseguimos! O mau humor passou e as meias ficam com prendas!",
   monstro_phishing: "Vencemos! Já não há partidas com as prendas!",
-  robo_spam: "Os brinquedos estão arranjados! Já pode haver Natal!",
-  espiao_sombras: "A luz do Natal venceu a escuridão! Está tudo a brilhar!"
+  robo_spam: "As prendas estão a salvo! Já pode haver Natal!",
+  espiao_sombras: "A luz do Natal derreteu o frio! Está tudo a brilhar!"
 };
 
 // Frases curtas mostradas (sem parar o jogo, só um "floatie") sempre que se
@@ -85,14 +85,14 @@ export const BOSS_HP_TAUNTS = {
     hp1: ["Não! Descobriram a minha partida!", "Isto não pode ser...", "A alegria... é mais forte!"]
   },
   robo_spam: {
-    atStart: ["Vou estragar todos os brinquedos!", "Não me apanhas, sou rápido demais!", "Peças soltas para todo o lado!"],
-    hp2: ["Essa amolgou-me a chapa!", "Não contava com essa pancada!", "Ainda tenho muitos brinquedos para estragar!"],
-    hp1: ["Não... estão todos a ser arranjados!", "Os meus circuitos... estão a falhar!", "Isto não pode ser!"]
+    atStart: ["Vou esmigalhar todas as prendas!", "Não me apanhas, sou rápido demais!", "Migalhas para todo o lado!"],
+    hp2: ["Essa deixou-me rachado!", "Não contava com essa pancada!", "Ainda tenho muitas prendas para esmigalhar!"],
+    hp1: ["Não... as prendas estão a salvo!", "O meu glacê... está a derreter!", "Isto não pode ser!"]
   },
   espiao_sombras: {
     atStart: ["A noite vai ficar mais comprida!", "Nunca me vais apanhar no ar!", "Vou apagar as luzes do Natal!"],
-    hp2: ["Impossível! Consegues ver-me no escuro?", "Isso não devia ter acontecido...", "Grrr, mais rápido da próxima vez!"],
-    hp1: ["Não... a luz do Natal está a vencer!", "As sombras... estão a desaparecer!", "Isto não pode ser o fim!"]
+    hp2: ["Impossível! Não me derretes assim tão depressa!", "Isso não devia ter acontecido...", "Grrr, mais rápido da próxima vez!"],
+    hp1: ["Não... a luz do Natal está a vencer!", "Estou a derreter!", "Isto não pode ser o fim!"]
   }
 };
 

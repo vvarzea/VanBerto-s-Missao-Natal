@@ -122,7 +122,7 @@ with sync_playwright() as p:
         errs, ext = [], []; pg = new_page(B, errs=errs, external=ext)
         pg.goto(BASE + "/index.html", wait_until="networkidle"); pg.wait_for_timeout(500)
         v = pg.evaluate("typeof Phaser!=='undefined' ? Phaser.VERSION : null")
-        fonts = pg.evaluate("document.fonts.check(\"800 20px 'Baloo 2'\") && document.fonts.check(\"400 16px 'Nunito'\")")
+        fonts = pg.evaluate("document.fonts.check(\"700 20px 'Nunito'\") && document.fonts.check(\"400 16px 'Nunito'\")")
         assert v, "Phaser não carregou"; assert fonts, "fontes locais não carregaram"
         assert not ext, f"pedidos externos: {ext[:3]}"; assert not errs, errs[:3]
         pg.context.close(); return f"Phaser {v}"

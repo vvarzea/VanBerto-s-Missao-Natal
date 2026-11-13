@@ -7,18 +7,19 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { isLastLevelOfRegion, saveMapProgress } from "./map.js?v=20261030natal12";
-import { resetQuizStats, usedQuizByLevel, usedQuizByTheme } from "./quiz.js?v=20261030natal12";
-import { itemsTotal, mapProgress, score, scoreText, set_mapProgress, set_score } from "./state.js?v=20261030natal12";
-import { globalStats, saveGlobalStats } from "./stats.js?v=20261030natal12";
-import { loadNamespace, saveNamespace } from "../storage.js?v=20261030natal12";
-import { resetAchievements } from "../achievements.js?v=20261030natal12";
-import { resetAllStars, getStarRecord, starsForLevel } from "../stars.js?v=20261030natal12";
-import { ARTEFACTS, ARTEFACT_SETS, SET_REACTIONS } from "../data-progression.js?v=20261030natal12";
-import { ensureAudio, beep, SFX } from "../audio.js?v=20261030natal12";
-import { LEVELS, THEMES } from "../data-levels.js?v=20261030natal12";
-import { QUIZ_ARTICLE, HISTORY } from "../data-quiz.js?v=20261030natal12";
-import { BOSSES } from "../data-bosses.js?v=20261030natal12";
+import { isLastLevelOfRegion, saveMapProgress } from "./map.js?v=20261113natal13";
+import { resetKeys } from "./blocks.js?v=20261113natal13";
+import { resetQuizStats, usedQuizByLevel, usedQuizByTheme } from "./quiz.js?v=20261113natal13";
+import { itemsTotal, mapProgress, score, scoreText, set_mapProgress, set_score } from "./state.js?v=20261113natal13";
+import { globalStats, saveGlobalStats } from "./stats.js?v=20261113natal13";
+import { loadNamespace, saveNamespace } from "../storage.js?v=20261113natal13";
+import { resetAchievements } from "../achievements.js?v=20261113natal13";
+import { resetAllStars, getStarRecord, starsForLevel } from "../stars.js?v=20261113natal13";
+import { ARTEFACTS, ARTEFACT_SETS, SET_REACTIONS } from "../data-progression.js?v=20261113natal13";
+import { ensureAudio, beep, SFX } from "../audio.js?v=20261113natal13";
+import { LEVELS, THEMES } from "../data-levels.js?v=20261113natal13";
+import { QUIZ_ARTICLE, HISTORY } from "../data-quiz.js?v=20261113natal13";
+import { BOSSES } from "../data-bosses.js?v=20261113natal13";
 
 // Popup curto "Direito recuperado!" — mostrado ao concluir um nível
 // =====================================================
@@ -72,6 +73,7 @@ export function saveBossRights() {
 // =====================================================
 
 export function resetAllProgress() {
+  resetKeys(); // contador de flocos de neve ❄️
   // Progresso do mapa da aventura
   set_mapProgress( { highestLevelReached: 0, levelsCompleted: [] });
   saveMapProgress();

@@ -7,10 +7,10 @@
  * As variáveis de estado vivem em state.js; aqui alteram-se com set_<nome>().
  *************************************************/
 
-import { historyOverlay, startOverlay } from "./dom.js?v=20261030natal12";
-import { showFloat } from "./feedback.js?v=20261030natal12";
-import { _eyeOverrideUntil, _overlayPaused, awaitingQuiz, awaitingStory, doubleJumpActive, invuln, pausedByTeacher, player, powered, set__eyeOverrideUntil, starPower } from "./state.js?v=20261030natal12";
-import { ensureAudio, beep } from "../audio.js?v=20261030natal12";
+import { historyOverlay, startOverlay } from "./dom.js?v=20261113natal13";
+import { showFloat } from "./feedback.js?v=20261113natal13";
+import { _eyeOverrideUntil, _overlayPaused, awaitingQuiz, awaitingStory, doubleJumpActive, invuln, pausedByTeacher, player, powered, set__eyeOverrideUntil, starPower } from "./state.js?v=20261113natal13";
+import { ensureAudio, beep } from "../audio.js?v=20261113natal13";
 
 // ===== Animação VanBerto =====
 
